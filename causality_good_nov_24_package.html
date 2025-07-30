@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Optional: Hide cursor if needed */
+      .hide_cursor {
+        cursor: none;
+      }
+    </style>
+    <title>My Experiment</title>
+    <!-- Include jsPsych library and plugins -->
+    <script src="jspsych/plugins/jspsych.js"></script>
+    <script src="jspsych/plugins/plugin-instructions.js"></script>
+    <script src="jspsych/plugins/plugin-html-button-response.js"></script>
+    <script src="jspsych/plugins/plugin-preload.js"></script>
+    <link rel="stylesheet" href="jspsych/css/jspsych.css">
+  </head>
+  <body></body>
+  <script>
+    // Define data folder for saving results
+    var data_folder = 'data/';
+
+    // Function to save data via POST request
+    function saveData(name, data) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'write_data.php'); // PHP file to handle data writing
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({ filedata: data }));
+    }
+
+    // Initialize jsPsych
+    var jsPsych = initJsPsych({
+      on_finish: function () {
+        saveData(data_folder + 'all_data_sub_' + subject_id + '.csv', jsPsych.data.get().csv());
+      }
+    });
+
+    // Generate a random subject ID
+    var subject_id = jsPsych.randomization.randomID(15);
+
+    // Initialize experiment timeline
+    var timeline = [];
+
+    // Preload images
+    var preload = {
+      type: jsPsychPreload,
+      images: [
+        'images/causal/package_causal/package_causal_1.png',
+        'images/causal/package_causal/package_causal_2.png',
+        'images/causal/package_causal/package_causal_3.png',
+        'images/causal/package_causal/package_causal_4.png',
+        'images/causal/package_causal/package_causal_5.png',
+        'images/causal/package_causal/package_causal_6.png',
+        'images/causal/package_causal/package_causal_7.png',
+        'images/causal/package_causal/package_causal_8.png',
+        'images/causal/package_causal/package_causal_9.png',
+        'images/causal/package_causal/package_causal_10.png'
+      ]
+    };
+
+    // Add preloading to timeline
+    timeline.push(preload);
+
+    // Add instruction phase
+    var instructions = {
+      type: jsPsychInstructions,
+      pages: [
+        '<h2>Welcome to the experiment!</h2>' +
+        '<p>In this experiment, you will see pairs of images depicting two events.</p>' +
+        '<p>Your task is to determine whether:</p>' +
+        '<ul>' +
+        '<li><strong>Event 1 leads to Event 2</strong></li>' +
+        '<li><strong>Event 2 leads to Event 1</strong></li>' +
+        '<li><strong>The events are unrelated</strong></li>' +
+        '</ul>' +
+        '<p>You will have up to <strong>1 minute</strong> to make your decision, but you can proceed sooner if you’re ready.</p>' +
+        '<p>The buttons will become active <strong>5 seconds</strong> after the images are displayed.</p>' +
+        '<p>Click "Next" to begin the experiment.</p>'
+      ],
+      show_clickable_nav: true
+    };
+
+    timeline.push(instructions);
+
+    // Generate all unique pairs for the causal images with random order
+    function generateRandomizedPairs(rangeStart, rangeEnd) {
+      let pairs = [];
+      for (let i = rangeStart; i <= rangeEnd; i++) {
+        for (let j = i + 1; j <= rangeEnd; j++) {
+          if (Math.random() > 0.5) {
+            pairs.push([i, j]); // Keep the original order
+          } else {
+            pairs.push([j, i]); // Reverse the order
+          }
+        }
+      }
+      return pairs;
+    }
+
+    let allPairs = generateRandomizedPairs(1, 10); // Generate randomized pairs from 1 to 10
+    let shuffledPairs = jsPsych.randomization.shuffle(allPairs); // Shuffle the pairs
+
+    // Add causal trials dynamically with a 1-minute limit and 5-second delay for buttons
+    shuffledPairs.forEach(pair => {
+      timeline.push({
+        type: jsPsychHtmlButtonResponse,
+        stimulus: `
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <!-- Event 1 on the left -->
+            <div style="text-align: center; margin-right: 20px;">
+              <p style="font-size: 24px; font-weight: bold;">Event 1</p>
+              <img src="images/causal/package_causal/package_causal_${pair[0]}.png" style="width: 300px; height: auto;">
+            </div>
+            <!-- Event 2 on the right -->
+            <div style="text-align: center; margin-left: 20px;">
+              <p style="font-size: 24px; font-weight: bold;">Event 2</p>
+              <img src="images/causal/package_causal/package_causal_${pair[1]}.png" style="width: 300px; height: auto;">
+            </div>
+          </div>
+          <p style="text-align: center; margin-top: 20px;">Does Event 1 lead to Event 2?</p>`,
+        choices: ['Event 1 leads to Event 2', 'Event 2 leads to Event 1', 'Events are unrelated'],
+        trial_duration: 60000, // Set a 1-minute time limit
+        button_html: '<button class="jspsych-btn" disabled>%choice%</button>', // Buttons are disabled initially
+        on_load: function () {
+          // Enable the buttons after 5 seconds
+          setTimeout(() => {
+            document.querySelectorAll('.jspsych-btn').forEach(button => {
+              button.disabled = false;
+            });
+          }, 5000);
+        },
+        on_finish: function (data) {
+          data.firstImageNumber = pair[0];
+          data.secondImageNumber = pair[1];
+          data.response_made = typeof data.response !== 'undefined'; // Add if a response was made
+        }
+      });
+    });
+
+    // Add final thank-you screen
+    var trial_end = {
+      type: jsPsychInstructions,
+      pages: [
+        '<h2>Thank you for participating!</h2>' +
+        '<p>You have completed the experiment.</p>'
+      ],
+      show_clickable_nav: true
+    };
+
+    timeline.push(trial_end);
+
+    // Run the experiment
+    jsPsych.run(timeline);
+  </script>
+</html>
