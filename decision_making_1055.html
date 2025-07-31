@@ -21,16 +21,31 @@
   <body></body>
   <script>
     /* initialize jsPsych */
+    var data_folder = 'data/';
+
+    function saveData(name, data){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'write_data.php');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({filedata: data}));
+    }
+
     var jsPsych = initJsPsych({
       on_finish: function() {
         saveData(data_folder+'All_data/all_data_sub_'+subject_id+".csv", jsPsych.data.get().csv());
-        jsPsych.data.get().localSave('csv','mydata.csv');
       }
     });
 
     /* create timeline */
     var timeline = [];
 
+
+        jsPsych.data.addProperties({
+      subject_id: subject_id,
+      study_id: study_id,
+      session_id: session_id,
+    });
+    
     // Preload images
     var preload = {
       type: jsPsychPreload,
@@ -87,7 +102,7 @@ pages: [
 };
 
 // Add the new instruction trial to the timeline after trial_01
-
+s
     // Function to create a trial for each image with a 3-second gap
     function createImageTrial(imagePath) {
       return {
