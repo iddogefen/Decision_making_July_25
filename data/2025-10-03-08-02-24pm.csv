@@ -1,0 +1,52 @@
+"success","timeout","failed_images","failed_audio","failed_video","trial_type","trial_index","time_elapsed","internal_node_id","subject_id","study_id","session_id","view_history","rt","stimulus","response","choice"
+"true","false","[]","[]","[]","preload","0","685","0.0-0.0","","","","","","","",""
+"","","","","","instructions","1","1756","0.0-1.0","","","","[{""page_index"":0,""viewing_time"":1068}]","1071","","",""
+"","","","","","instructions","2","3849","0.0-2.0","","","","[{""page_index"":0,""viewing_time"":2092}]","2093","","",""
+"true","","","","","fullscreen","3","5880","0.0-3.0","","","","","1014","","",""
+"","","","","","instructions","4","6857","0.0-4.0","","","","[{""page_index"":0,""viewing_time"":976}]","976","","",""
+"","","","","","html-keyboard-response","5","13873","0.0-5.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","6","20888","0.0-6.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","7","27895","0.0-7.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-button-response","8","30489","0.0-8.0","","","","","2592","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0"
+"","","","","","html-keyboard-response","9","37500","0.0-9.0-0.0-0.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","10","44515","0.0-10.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","11","51528","0.0-11.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","12","58540","0.0-12.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","13","65545","0.0-13.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-button-response","14","67753","0.0-14.0","","","","","2207","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","1","1"
+"","","","","","html-keyboard-response","15","74765","0.0-15.0-1.0-0.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/semantic/semantic_series_2/semantic_series_2_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","html-keyboard-response","16","81782","0.0-16.0","","","","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null",""
+"","","","","","survey-text","17","85453","0.0-17.0","","","","","3656","","{""Q0"":""aaaaaa""}",""
+"","","","","","survey-text","18","86513","0.0-18.0","","","","","1057","","{""Q0"":""aaaaaa""}",""
+"","","","","","html-button-response","19","87777","0.0-19.0","","","","","1263","Which color deck does the fourth image continue the story from?","1",""
+"","","","","","html-button-response","20","88248","0.0-20.0","","","","","471","Which color deck does the fourth image NOT follow the story from?","1",""
+"","","","","","survey-text","21","91217","0.0-21.0","","","","","2966","","{""Q0"":""aaaaaaa"",""Q1"":""aaaaaaaaa""}",""
+"","","","","","instructions","22","92249","0.0-22.0","","","","[{""page_index"":0,""viewing_time"":1031}]","1032","","",""
