@@ -95,6 +95,7 @@
         '<h2>Instructions</h2>' +
         '<p>In this experiment, you will view three images and then choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
         '<p><b>Your choice will determine the last image you see in the sequence.</b></p>' +
+        '<p>There is some difference in the content between the two decks. As you go along, try to explore the differences and choose the deck that feels more interesting to you.</p>' +
         '<p>There are no right or wrong answers, just follow what feels more engaging to you.</p>' +
         '</div>'
       ],
@@ -158,12 +159,18 @@
 
     // כל ה־18 בלוקים
     var causal_blocks = [
-    
       createCausalBlock(1, 1),
       createCausalBlock(2, 2),
-      createCausalBlock(3, 4),
-      createCausalBlock(4, 4)
+      createCausalBlock(3, 3),
+      createCausalBlock(4, 4),
+      createCausalBlock(5, 5),
+      createCausalBlock(6, 6),
+      createCausalBlock(7, 7),
+      createCausalBlock(8, 8),
+      createCausalBlock(9, 9),
+      createCausalBlock(10, 10)
     ];
+
 
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
