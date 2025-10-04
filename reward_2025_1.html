@@ -90,15 +90,27 @@
     // ----------- INSTRUCTIONS -----------
     var instructions_deck_choice = {
       type: jsPsychInstructions,
-      pages: [
-        '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
-        '<h2>Instructions</h2>' +
-        '<p>In this experiment, you will view images and choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
-        '<p><b>Your choice will determine the following images you see in the sequence.</b></p>' +
-        '<p>As you go along, try to explore the differences and choose the deck that feels more interesting to you.</p>' +
-        '<p>There are no right or wrong answers, just follow what feels more engaging to you.</p>' +
-        '</div>'
-      ],
+pages: [
+  '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
+  '<h2>Instructions</h2>' +
+  '<p>In this experiment, you will view a series of images and choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
+  '<p><b>Your choice will determine the sequence of images that follows.</b></p>' +
+
+  // 🔹 קטע מודגש ומופרד ללא צבעים
+  '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
+    '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
+    'One deck presents a coherent and connected sequence of events that unfold logically over time.<br>' +
+    'The other deck presents a random series of events that are independent and do not follow a clear sequence.' +
+    '</p>' +
+  '</div>' +
+
+  '<p>As you go along, try to explore the differences between the two decks and choose the one that feels more interesting or engaging to you.</p>' +
+  '<p>There are no right or wrong answers — simply follow your intuition.</p>' +
+  '</div>'
+],
+
+
+
       show_clickable_nav: true
     };
     timeline.push(instructions_deck_choice);
@@ -201,11 +213,6 @@
       questions: [{prompt: 'Can you describe the difference between the two decks of cards?'}]
     };
 
-    var trial_interesting_deck = {
-      type: jsPsychSurveyText,
-      questions: [{prompt: 'Which deck seemed more interesting to you overall?'}]
-    };
-
     var trial_deck_color = {
       type: jsPsychHtmlButtonResponse,
       stimulus: 'Which color deck does the following images continue the story from?',
@@ -217,8 +224,18 @@
       stimulus: 'Which color deck do the following images NOT follow the story from?',
       choices: ['Blue', 'Red']
     };
+    
+    var trial_deck_preference = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Which type of deck did you prefer overall?',
+  choices: [
+    'The red deck, which showed a series of unrelated events',
+    'The blue deck, which showed a connected and coherent story'
+  ]
+};
 
-    timeline.push(trial_difference_between_decks, trial_interesting_deck, trial_deck_color, trial_deck_color_not_following);
+
+    timeline.push(trial_difference_between_decks, trial_deck_color, trial_deck_color_not_following, trial_deck_preference);
 
     var trial_101 = {
       type: jsPsychSurveyText,
