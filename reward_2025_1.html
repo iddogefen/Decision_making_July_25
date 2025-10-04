@@ -36,7 +36,7 @@
 
     var timeline = [];
 
-    // Subject properties
+    // ----------- SUBJECT PROPERTIES -----------
     var subject_id = jsPsych.data.getURLVariable('participantId');
     var study_id = jsPsych.data.getURLVariable('assignmentId');
     var session_id = jsPsych.data.getURLVariable('projectId');
@@ -53,8 +53,7 @@
       images: [
         'consent_form_2022.png',
         'images/blue_deck_1.png',
-        'images/red_deck_2.png',
-        // כל שאר התמונות שלך פה כמו בקובץ הקודם...
+        'images/red_deck_2.png'
       ]
     };
     timeline.push(preload);
@@ -88,14 +87,15 @@
 
     timeline.push(trial_0, trial_consent, trial_01);
 
+    // ----------- INSTRUCTIONS -----------
     var instructions_deck_choice = {
       type: jsPsychInstructions,
       pages: [
         '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
         '<h2>Instructions</h2>' +
-        '<p>In this experiment, you will view three images and then choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
-        '<p><b>Your choice will determine the last image you see in the sequence.</b></p>' +
-        '<p>There is some difference in the content between the two decks. As you go along, try to explore the differences and choose the deck that feels more interesting to you.</p>' +
+        '<p>In this experiment, you will view images and choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
+        '<p><b>Your choice will determine the following images you see in the sequence.</b></p>' +
+        '<p>As you go along, try to explore the differences and choose the deck that feels more interesting to you.</p>' +
         '<p>There are no right or wrong answers, just follow what feels more engaging to you.</p>' +
         '</div>'
       ],
@@ -130,26 +130,37 @@
 
     var clean_deck = [ createImageTrial('images/other/blank.png') ];
 
-    // ----------- BLOCK CREATION -----------
+    // ----------- BLOCK CREATION (UPDATED STRUCTURE) -----------
     function createCausalBlock(seriesIndex, semanticIndex) {
       return [
+        // 1. קלף ראשון
         createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`),
-        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`),
-        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`),
+
+        // 2. בחירה
         choose_next_image,
+
+        // 3. שלושה קלפים בהתאם לבחירה
         {
           timeline: [
             {
               conditional_function: function() {
                 return jsPsych.data.getLastTrialData().values()[0].response == 0;
               },
-              timeline: [ createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`) ]
+              timeline: [
+                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`),
+                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`),
+                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`)
+              ]
             },
             {
               conditional_function: function() {
                 return jsPsych.data.getLastTrialData().values()[0].response == 1;
               },
-              timeline: [ createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`) ]
+              timeline: [
+                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_b.png`),
+                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_c.png`),
+                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`)
+              ]
             }
           ]
         },
@@ -157,7 +168,7 @@
       ];
     }
 
-    // כל ה־18 בלוקים
+    // ----------- ALL BLOCKS -----------
     var causal_blocks = [
       createCausalBlock(1, 1),
       createCausalBlock(2, 2),
@@ -170,7 +181,6 @@
       createCausalBlock(9, 9),
       createCausalBlock(10, 10)
     ];
-
 
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -198,13 +208,13 @@
 
     var trial_deck_color = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck does the fourth image continue the story from?',
+      stimulus: 'Which color deck does the following images continue the story from?',
       choices: ['Blue', 'Red']
     };
 
     var trial_deck_color_not_following = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck does the fourth image NOT follow the story from?',
+      stimulus: 'Which color deck do the following images NOT follow the story from?',
       choices: ['Blue', 'Red']
     };
 
@@ -229,7 +239,7 @@
     };
     timeline.push(trial_102);
 
-    // ----------- RUN -----------
+    // ----------- RUN EXPERIMENT -----------
     jsPsych.run(timeline);
 
   </script>
