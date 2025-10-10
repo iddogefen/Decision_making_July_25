@@ -1,0 +1,232 @@
+"success","timeout","failed_images","failed_audio","failed_video","trial_type","trial_index","time_elapsed","internal_node_id","subject_id","study_id","session_id","view_history","rt","stimulus","response","choice","question_order"
+"true","false","[]","[]","[]","preload","0","167","0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","","","","",""
+"","","","","","instructions","1","1664","0.0-1.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","[{""page_index"":0,""viewing_time"":1497}]","1497","","","",""
+"","","","","","instructions","2","3682","0.0-2.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","[{""page_index"":0,""viewing_time"":2017}]","2017","","","",""
+"true","","","","","fullscreen","3","6300","0.0-3.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1608","","","",""
+"","","","","","instructions","4","17020","0.0-4.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","[{""page_index"":0,""viewing_time"":10720}]","10720","","","",""
+"","","","","","html-keyboard-response","5","24032","0.0-5.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","6","31035","0.0-6.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","7","38040","0.0-7.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","8","40068","0.0-8.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2027","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","9","47083","0.0-9.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","10","50977","0.0-10.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","3892","","{""Q0"":3}","","[0]"
+"","","","","","survey-likert","11","53428","0.0-11.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2451","","{""Q0"":2}","","[0]"
+"","","","","","html-keyboard-response","12","60433","0.0-12.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","13","67439","0.0-13.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","14","74440","0.0-14.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","15","81454","0.0-15.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","16","83756","0.0-16.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2301","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","17","90771","0.0-17.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","18","93668","0.0-18.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2897","","{""Q0"":2}","","[0]"
+"","","","","","survey-likert","19","94924","0.0-19.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1256","","{""Q0"":2}","","[0]"
+"","","","","","html-keyboard-response","20","101933","0.0-20.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","21","108948","0.0-21.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","22","115956","0.0-22.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","23","122957","0.0-23.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","24","123684","0.0-24.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","726","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","25","130686","0.0-25.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","26","132692","0.0-26.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2006","","{""Q0"":3}","","[0]"
+"","","","","","survey-likert","27","134036","0.0-27.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1344","","{""Q0"":1}","","[0]"
+"","","","","","html-keyboard-response","28","141047","0.0-28.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","29","148055","0.0-29.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","30","155061","0.0-30.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","31","162068","0.0-31.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","32","163532","0.0-32.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1463","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","33","170536","0.0-33.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","34","172392","0.0-34.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1856","","{""Q0"":3}","","[0]"
+"","","","","","survey-likert","35","173794","0.0-35.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1401","","{""Q0"":1}","","[0]"
+"","","","","","html-keyboard-response","36","180804","0.0-36.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","37","187810","0.0-37.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","38","194823","0.0-38.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","39","201823","0.0-39.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","40","202790","0.0-40.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","966","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","41","209800","0.0-41.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","42","212938","0.0-42.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","3138","","{""Q0"":2}","","[0]"
+"","","","","","survey-likert","43","214340","0.0-43.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1401","","{""Q0"":0}","","[0]"
+"","","","","","html-keyboard-response","44","221345","0.0-44.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","45","228353","0.0-45.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","46","235356","0.0-46.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","47","242367","0.0-47.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","48","243638","0.0-48.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1271","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","49","250641","0.0-49.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","50","253732","0.0-50.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","3091","","{""Q0"":1}","","[0]"
+"","","","","","survey-likert","51","255056","0.0-51.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1323","","{""Q0"":1}","","[0]"
+"","","","","","html-keyboard-response","52","262071","0.0-52.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","53","269077","0.0-53.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","54","276090","0.0-54.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","55","283101","0.0-55.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","56","284174","0.0-56.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1072","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","57","291181","0.0-57.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","58","293252","0.0-58.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2070","","{""Q0"":3}","","[0]"
+"","","","","","survey-likert","59","294802","0.0-59.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1549","","{""Q0"":1}","","[0]"
+"","","","","","html-keyboard-response","60","301810","0.0-60.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","61","308816","0.0-61.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","62","315824","0.0-62.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","63","322830","0.0-63.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","64","326658","0.0-64.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","3827","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","65","333660","0.0-65.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","66","335018","0.0-66.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1357","","{""Q0"":3}","","[0]"
+"","","","","","survey-likert","67","337208","0.0-67.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2190","","{""Q0"":0}","","[0]"
+"","","","","","html-keyboard-response","68","344215","0.0-68.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","69","351226","0.0-69.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","70","358229","0.0-70.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","71","365241","0.0-71.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","72","367354","0.0-72.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2112","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","73","374367","0.0-73.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","74","377058","0.0-74.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2691","","{""Q0"":2}","","[0]"
+"","","","","","survey-likert","75","378294","0.0-75.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1236","","{""Q0"":1}","","[0]"
+"","","","","","html-keyboard-response","76","385307","0.0-76.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","77","392315","0.0-77.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_a.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","78","399317","0.0-78.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_b.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-keyboard-response","79","406329","0.0-79.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_c.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","html-button-response","80","407730","0.0-80.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1401","
+        <div style=""display: flex; justify-content: center; align-items: center;"">
+          <img src=""images/red_deck_2.png"" style=""width: 300px; height: 300px; margin-right: 10px;"" />
+          <img src=""images/blue_deck_1.png"" style=""width: 300px; height: 300px;"" />
+        </div>","0","0",""
+"","","","","","html-keyboard-response","81","414731","0.0-81.0-0.0-0.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_d.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-likert","82","416098","0.0-82.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1366","","{""Q0"":3}","","[0]"
+"","","","","","survey-likert","83","417572","0.0-83.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","1474","","{""Q0"":2}","","[0]"
+"","","","","","html-keyboard-response","84","424583","0.0-84.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","null","<div style=""display: flex; justify-content: center; align-items: center;"">
+                     <img src=""images/other/blank.png"" style=""width: 300px; height: 300px;"" />
+                   </div>","null","",""
+"","","","","","survey-text","85","441184","0.0-85.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","16599","","{""Q0"":""Red seemed to lead to an unexpected outcome, I imagine blue would have led to an expected one.""}","",""
+"","","","","","html-button-response","86","447946","0.0-86.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","6762","Which color deck do the following images continue the story from?","1","",""
+"","","","","","html-button-response","87","456398","0.0-87.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","8452","Which color deck do the following images NOT follow the story from?","1","",""
+"","","","","","html-button-response","88","458936","0.0-88.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","2538","Which type of deck did you prefer overall?","0","",""
+"","","","","","survey-text","89","462044","0.0-89.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","","3106","","{""Q0"":""Male"",""Q1"":""34""}","",""
+"","","","","","instructions","90","466716","0.0-90.0","674A5CE85CF64CAA89A6E78D2AB131C4","0199d048-0e63-79a5-a012-d2a2e00feec4","0199d03a-64b5-7588-a054-13255d1a32c0","[{""page_index"":0,""viewing_time"":4672}]","4672","","","",""
