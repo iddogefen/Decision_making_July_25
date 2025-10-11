@@ -139,6 +139,8 @@
     // ----------- BLOCK CREATION -----------
     function createCausalBlock(seriesIndex, semanticIndex) {
       return [
+        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`),
+        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`),
         createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`),
         choose_next_image,
         {
