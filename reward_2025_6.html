@@ -99,28 +99,26 @@
     // ====================================================
     // INSTRUCTIONS
     // ====================================================
-var instructions_deck_choice = {
-  type: jsPsychInstructions,
-  pages: [
-    '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
-    '<h2>Instructions</h2>' +
-    '<p>In this experiment, you will choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
-    '<p><b>After each choice, you will see a short sequence of sentences.</b></p>' +
-    '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
-    '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
-    'The <span style="color: blue;">blue deck</span> reveals a sequence that forms one coherent story — each event continues naturally from the previous one.<br><br>' +
-    'The <span style="color: red;">red deck</span> reveals a sequence of surprising but <b>unrelated</b> events that do not form a continuous story.' +
-    '</p>' +
-    '</div>' +
-    '<p>As you go along, try to notice the differences between the two decks and choose the one that feels more engaging or meaningful to you.</p>' +
-    '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
-    '</div>'
-  ],
-  show_clickable_nav: true
-};
-
-timeline.push(instructions_deck_choice);
-
+    var instructions_deck_choice = {
+      type: jsPsychInstructions,
+      pages: [
+        '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
+        '<h2>Instructions</h2>' +
+        '<p>In this experiment, you will choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
+        '<p><b>After each choice, you will see a short sequence of sentences.</b></p>' +
+        '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
+        '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
+        'One deck reveals a new sequence that is surprising but still connected to the events that came before.<br>' +
+        'The other deck reveals a surprising sequence that is not connected to the previous events.' +
+        '</p>' +
+        '</div>' +
+        '<p>As you go along, try to notice the differences between the two decks and choose the one that feels more engaging or meaningful to you.</p>' +
+        '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
+        '</div>'
+      ],
+      show_clickable_nav: true
+    };
+    timeline.push(instructions_deck_choice);
 
     // ====================================================
     // HELPER FUNCTIONS
@@ -159,7 +157,8 @@ timeline.push(instructions_deck_choice);
       return [
         // --- Stage 1: A, B, C ---
         createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, seriesIndex, repetition, 'A'),
-
+        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, seriesIndex, repetition, 'B'),
+        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, seriesIndex, repetition, 'C'),
 
         // --- Choice ---
         Object.assign({}, choose_next_image, { data: { series: seriesIndex, repetition: repetition, phase: 'choice' } }),
@@ -172,10 +171,9 @@ timeline.push(instructions_deck_choice);
                 return jsPsych.data.getLastTrialData().values()[0].response == 0;
               },
               timeline: [
-                
-                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, seriesIndex, repetition, 'B'),
-                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, seriesIndex, repetition, 'C'),
-                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`, seriesIndex, repetition, 'D')
+                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`, seriesIndex, repetition, 'D'),
+                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_e.png`, seriesIndex, repetition, 'E'),
+                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_f.png`, seriesIndex, repetition, 'F')
               ]
             },
             {
@@ -183,9 +181,9 @@ timeline.push(instructions_deck_choice);
                 return jsPsych.data.getLastTrialData().values()[0].response == 1;
               },
               timeline: [
-                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_b.png`, seriesIndex, repetition, 'B'),
-                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_c.png`, seriesIndex, repetition, 'C'),
-                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`, seriesIndex, repetition, 'D')
+                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`, seriesIndex, repetition, 'D'),
+                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_e.png`, seriesIndex, repetition, 'E'),
+                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_f.png`, seriesIndex, repetition, 'F')
               ]
             }
           ]
