@@ -152,86 +152,83 @@ timeline.push(instructions_deck_choice);
 
     var clean_deck = [ createImageTrial('images/other/blank.png', 0, 0, 'blank') ];
 
-    // ====================================================
-    // BLOCK CREATION (A–B–C → CHOICE → D–E–F)
-    // ====================================================
-    function createCausalBlock(seriesIndex, semanticIndex, repetition) {
-      return [
-        // --- Stage 1: A, B, C ---
-        createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, seriesIndex, repetition, 'A'),
+   // ====================================================
+// BLOCK CREATION (A–B–C → CHOICE → D)
+// ====================================================
+function createCausalBlock(seriesIndex, semanticIndex, repetition) {
+  return [
+    // --- Stage 1: A, B, C (לפני הבחירה) ---
+    createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, seriesIndex, repetition, 'A'),
+    createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, seriesIndex, repetition, 'B'),
+    createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, seriesIndex, repetition, 'C'),
 
+    // --- Choice (לאחר שלוש התמונות) ---
+    Object.assign({}, choose_next_image, { data: { series: seriesIndex, repetition: repetition, phase: 'choice' } }),
 
-        // --- Choice ---
-        Object.assign({}, choose_next_image, { data: { series: seriesIndex, repetition: repetition, phase: 'choice' } }),
-
-        // --- Stage 2: Conditional D–E–F ---
+    // --- Stage 2: Conditional D ---
+    {
+      timeline: [
         {
+          conditional_function: function() {
+            return jsPsych.data.getLastTrialData().values()[0].response == 0;
+          },
           timeline: [
-            {
-              conditional_function: function() {
-                return jsPsych.data.getLastTrialData().values()[0].response == 0;
-              },
-              timeline: [
-                
-                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, seriesIndex, repetition, 'B'),
-                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, seriesIndex, repetition, 'C'),
-                createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`, seriesIndex, repetition, 'D')
-              ]
-            },
-            {
-              conditional_function: function() {
-                return jsPsych.data.getLastTrialData().values()[0].response == 1;
-              },
-              timeline: [
-                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_b.png`, seriesIndex, repetition, 'B'),
-                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_c.png`, seriesIndex, repetition, 'C'),
-                createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`, seriesIndex, repetition, 'D')
-              ]
-            }
+            createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`, seriesIndex, repetition, 'D')
           ]
         },
-
-        // --- Question 1: Surprise ---
         {
-          type: jsPsychSurveyLikert,
-          questions: [
-            {
-              prompt: "How surprising did you find the last set of sentences?",
-              labels: [
-                "1 - Not at all surprising",
-                "2",
-                "3",
-                "4",
-                "5 - Extremely surprising"
-              ],
-              required: true
-            }
-          ],
-          data: { series: seriesIndex, repetition: repetition, phase: 'surprise_rating' }
-        },
+          conditional_function: function() {
+            return jsPsych.data.getLastTrialData().values()[0].response == 1;
+          },
+          timeline: [
+            createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`, seriesIndex, repetition, 'D')
+          ]
+        }
+      ]
+    },
 
-        // --- Question 2: Enjoyment ---
+    // --- Question 1: Surprise ---
+    {
+      type: jsPsychSurveyLikert,
+      questions: [
         {
-          type: jsPsychSurveyLikert,
-          questions: [
-            {
-              prompt: "How much did you enjoy this sequence?",
-              labels: [
-                "1 - Not at all",
-                "2",
-                "3",
-                "4",
-                "5 - Very much"
-              ],
-              required: true
-            }
+          prompt: "How surprising did you find the last set of sentences?",
+          labels: [
+            "1 - Not at all surprising",
+            "2",
+            "3",
+            "4",
+            "5 - Extremely surprising"
           ],
-          data: { series: seriesIndex, repetition: repetition, phase: 'enjoyment_rating' }
-        },
+          required: true
+        }
+      ],
+      data: { series: seriesIndex, repetition: repetition, phase: 'surprise_rating' }
+    },
 
-        ...clean_deck
-      ];
-    }
+    // --- Question 2: Enjoyment ---
+    {
+      type: jsPsychSurveyLikert,
+      questions: [
+        {
+          prompt: "How much did you enjoy this sequence?",
+          labels: [
+            "1 - Not at all",
+            "2",
+            "3",
+            "4",
+            "5 - Very much"
+          ],
+          required: true
+        }
+      ],
+      data: { series: seriesIndex, repetition: repetition, phase: 'enjoyment_rating' }
+    },
+
+    ...clean_deck
+  ];
+}
+
 
     // ====================================================
     // BLOCK RANDOMIZATION AND DUPLICATION
@@ -241,12 +238,7 @@ timeline.push(instructions_deck_choice);
       causal_blocks.push(createCausalBlock(i, i, 1));
     }
 
-    // Duplicate each block once
-    var doubled_blocks = [];
-    causal_blocks.forEach((block, i) => {
-      doubled_blocks.push(block);
-      doubled_blocks.push(createCausalBlock(i + 1, i + 1, 2));
-    });
+
 
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -256,7 +248,7 @@ timeline.push(instructions_deck_choice);
       return array;
     }
 
-    var randomized_causal_blocks = shuffleArray(doubled_blocks);
+var randomized_causal_blocks = shuffleArray(causal_blocks);
 
     randomized_causal_blocks.forEach(block => {
       timeline.push(...block);
