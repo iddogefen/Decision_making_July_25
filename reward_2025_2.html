@@ -274,14 +274,15 @@ var randomized_causal_blocks = shuffleArray(causal_blocks);
       choices: ['Blue', 'Red']
     };
 
-    var trial_deck_preference = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which type of deck did you prefer overall?',
-      choices: [
-        'The red deck, which showed a series of unrelated events',
-        'The blue deck, which showed a connected and coherent story'
-      ]
-    };
+var trial_deck_preference = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Which type of deck did you prefer overall?',
+  choices: [
+    'The red deck, which showed new information',
+    'The blue deck, which showed a connected and coherent story'
+  ]
+};
+
 
     timeline.push(
       trial_difference_between_decks,
