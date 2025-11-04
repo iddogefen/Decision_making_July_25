@@ -168,8 +168,8 @@ function createDeckTrial(seriesIndex) {
               return jsPsych.data.getLastTrialData().values()[0].response == 0; // red deck (causal)
             },
             timeline: [
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a', 5000),
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b', 5000)
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a', 6000),
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b', 6000)
             ]
           },
           {
@@ -177,7 +177,7 @@ function createDeckTrial(seriesIndex) {
               return jsPsych.data.getLastTrialData().values()[0].response == 1; // blue deck (semantic)
             },
             timeline: [
-              createImageTrial(`images/semantic/semantic_series_${seriesIndex}/semantic_series_${seriesIndex}_a.png`, 'semantic_a', 10000)
+              createImageTrial(`images/semantic/semantic_series_${seriesIndex}/semantic_series_${seriesIndex}_a.png`, 'semantic_a', 12000)
             ]
           }
         ]
