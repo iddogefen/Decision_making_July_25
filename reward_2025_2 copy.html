@@ -104,14 +104,15 @@
       pages: [
         '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
         '<h2>Instructions</h2>' +
-        '<p>In this experiment, you will choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
-        '<p><b>After each choice, you will see a short sequence of sentences or statements.</b></p>' +
+        '<p>In this experiment, you will choose between two decks of cards: one <span style="color: blue;">blue</span> and one <span style="color: red;">red</span>.</p>' +
+        '<p><b>After each choice, you will see a short piece of information.</b></p>' +
         '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
         '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
-        'The <span style="color: blue;">blue deck</span> presents a <b>question and an answer</b> — together they form a small, coherent exchange.<br><br>' +
-        'The <span style="color: red;">red deck</span> presents an <b>interesting fact</b> — something new or surprising that stands on its own.' +
+        'The <span style="color: blue;">blue deck</span> presents a <b>question and an answer</b> about something new or surprising.<br><br>' +
+        'The <span style="color: red;">red deck</span> presents an <b>interesting fact</b> on something new or surprising.' +
         '</p>' +
         '</div>' +
+        '<p><b>The total time for each choice is the same for both decks.</b> Choosing one color will not make the experiment faster or slower.</p>' +
         '<p>As you go along, try to notice the differences between the two decks and choose the one that feels more engaging or meaningful to you.</p>' +
         '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
         '</div>'
@@ -124,14 +125,14 @@
     // ====================================================
     // HELPER FUNCTIONS
     // ====================================================
-    function createImageTrial(imagePath, label) {
+    function createImageTrial(imagePath, label, duration = 6000) {
       return {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `<div style="display: flex; justify-content: center; align-items: center;">
                      <img src="${imagePath}" style="width: 300px; height: 300px;" />
                    </div>`,
         choices: "NO_KEYS",
-        trial_duration: 6000,
+        trial_duration: duration,
         data: { phase: label }
       };
     }
@@ -143,7 +144,7 @@
           <img src="images/red_deck_2.png" style="width: 300px; height: 300px; margin-right: 10px;" />
           <img src="images/blue_deck_1.png" style="width: 300px; height: 300px;" />
         </div>`,
-      choices: ['Red Deck', 'Blue Deck'],
+      choices: ['Blue Deck', 'Red Deck'],
       data: { phase: 'deck_choice' },
       on_finish: function(data) {
         data.choice = data.response;
@@ -151,70 +152,73 @@
     };
 
     // ====================================================
-    // TRIAL LOGIC (red → causal_a+b / blue → semantic_a)
+    // TRIAL LOGIC (Blue = Q&A / Red = Fact)
     // ====================================================
-    function createDeckTrial(seriesIndex) {
-      return {
+    // ====================================================
+// TRIAL LOGIC (Red = Causal / Blue = Semantic)
+// ====================================================
+function createDeckTrial(seriesIndex) {
+  return {
+    timeline: [
+      choose_deck,
+      {
         timeline: [
-          choose_deck,
           {
+            conditional_function: function() {
+              return jsPsych.data.getLastTrialData().values()[0].response == 0; // red deck (causal)
+            },
             timeline: [
-              {
-                conditional_function: function() {
-                  return jsPsych.data.getLastTrialData().values()[0].response == 0; // red
-                },
-                timeline: [
-                  createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a'),
-                  createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b')
-                ]
-              },
-              {
-                conditional_function: function() {
-                  return jsPsych.data.getLastTrialData().values()[0].response == 1; // blue
-                },
-                timeline: [
-                  createImageTrial(`images/semantic/semantic_series_${seriesIndex}/semantic_series_${seriesIndex}_a.png`, 'semantic_a')
-                ]
-              }
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a', 4000),
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b', 4000)
             ]
           },
           {
-            type: jsPsychSurveyLikert,
-            questions: [
-              {
-                prompt: "How surprising did you find the last set of sentences?",
-                labels: [
-                  "1 - Not at all surprising",
-                  "2",
-                  "3",
-                  "4",
-                  "5 - Extremely surprising"
-                ],
-                required: true
-              }
-            ],
-            data: { phase: 'surprise_rating' }
-          },
-          {
-            type: jsPsychSurveyLikert,
-            questions: [
-              {
-                prompt: "How much did you enjoy this sequence?",
-                labels: [
-                  "1 - Not at all",
-                  "2",
-                  "3",
-                  "4",
-                  "5 - Very much"
-                ],
-                required: true
-              }
-            ],
-            data: { phase: 'enjoyment_rating' }
+            conditional_function: function() {
+              return jsPsych.data.getLastTrialData().values()[0].response == 1; // blue deck (semantic)
+            },
+            timeline: [
+              createImageTrial(`images/semantic/semantic_series_${seriesIndex}/semantic_series_${seriesIndex}_a.png`, 'semantic_a', 8000)
+            ]
           }
         ]
-      };
-    }
+      },
+      {
+        type: jsPsychSurveyLikert,
+        questions: [
+          {
+            prompt: "How surprising did you find this information?",
+            labels: [
+              "1 - Not at all surprising",
+              "2",
+              "3",
+              "4",
+              "5 - Extremely surprising"
+            ],
+            required: true
+          }
+        ],
+        data: { phase: 'surprise_rating' }
+      },
+      {
+        type: jsPsychSurveyLikert,
+        questions: [
+          {
+            prompt: "How much did you enjoy this information?",
+            labels: [
+              "1 - Not at all",
+              "2",
+              "3",
+              "4",
+              "5 - Very much"
+            ],
+            required: true
+          }
+        ],
+        data: { phase: 'enjoyment_rating' }
+      }
+    ]
+  };
+}
 
     // ====================================================
     // RANDOMIZED BLOCKS
@@ -246,13 +250,13 @@
 
     var trial_deck_color = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck do the following sentences continue the story from?',
+      stimulus: 'Which color deck showed a question and an answer?',
       choices: ['Blue', 'Red']
     };
 
     var trial_deck_color_not_following = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck do the following sentences NOT follow the story from?',
+      stimulus: 'Which color deck showed an interesting fact?',
       choices: ['Blue', 'Red']
     };
 
@@ -260,8 +264,8 @@
       type: jsPsychHtmlButtonResponse,
       stimulus: 'Which type of deck did you prefer overall?',
       choices: [
-        'The red deck, which showed new information',
-        'The blue deck, which showed a connected and coherent story'
+        'The red deck, which showed interesting facts',
+        'The blue deck, which showed questions and answers'
       ]
     };
 
