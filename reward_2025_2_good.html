@@ -97,136 +97,148 @@
     timeline.push(trial_0, trial_consent, trial_01);
 
     // ====================================================
-    // INSTRUCTIONS (UPDATED)
+    // INSTRUCTIONS
     // ====================================================
-    var instructions_deck_choice = {
-      type: jsPsychInstructions,
-      pages: [
-        '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
-        '<h2>Instructions</h2>' +
-        '<p>In this experiment, you will choose between two decks of cards: one <span style="color: blue;">blue</span> and one <span style="color: red;">red</span>.</p>' +
-        '<p><b>After each choice, you will see a short piece of information.</b></p>' +
-        '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
-        '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
-        'The <span style="color: blue;">blue deck</span> presents a <b>question and an answer</b> about something new or surprising.<br><br>' +
-        'The <span style="color: red;">red deck</span> presents an <b>interesting fact</b> on something new or surprising.' +
-        '</p>' +
-        '</div>' +
-        '<p><b>The total time for each choice is the same for both decks.</b> Choosing one color will not make the experiment faster or slower.</p>' +
-        '<p>As you go along, try to notice the differences between the two decks and choose the one that feels more engaging or meaningful to you.</p>' +
-        '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
-        '</div>'
-      ],
-      show_clickable_nav: true
-    };
+var instructions_deck_choice = {
+  type: jsPsychInstructions,
+  pages: [
+    '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
+    '<h2>Instructions</h2>' +
+    '<p>In this experiment, you will choose between two decks of cards: one <span style="color: red;">red</span> and one <span style="color: blue;">blue</span>.</p>' +
+    '<p><b>After each choice, you will see a short sequence of sentences.</b></p>' +
+    '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
+    '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
+    'The <span style="color: blue;">blue deck</span> continues the story, each event follows naturally from what happened before, forming one coherent sequence.<br><br>' +
+    'The <span style="color: red;">red deck</span> presents an event that does <b>not continue</b> the story, but instead reveals something <b>new or unexpected</b> about the situation.' +
+    '</p>' +
+    '</div>' +
+    '<p>As you go along, try to notice the differences between the two decks and choose the one that feels more engaging or meaningful to you.</p>' +
+    '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
+    '</div>'
+  ],
+  show_clickable_nav: true
+};
 
-    timeline.push(instructions_deck_choice);
+timeline.push(instructions_deck_choice);
+
 
     // ====================================================
     // HELPER FUNCTIONS
     // ====================================================
-    function createImageTrial(imagePath, label, duration = 6000) {
+    function createImageTrial(imagePath, seriesIndex, repetition, label) {
       return {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `<div style="display: flex; justify-content: center; align-items: center;">
                      <img src="${imagePath}" style="width: 300px; height: 300px;" />
                    </div>`,
         choices: "NO_KEYS",
-        trial_duration: duration,
-        data: { phase: label }
+        trial_duration: 6000,
+        data: { series: seriesIndex, repetition: repetition, phase: label }
       };
     }
 
-    var choose_deck = {
+    var choose_next_image = {
       type: jsPsychHtmlButtonResponse,
       stimulus: `
         <div style="display: flex; justify-content: center; align-items: center;">
           <img src="images/red_deck_2.png" style="width: 300px; height: 300px; margin-right: 10px;" />
           <img src="images/blue_deck_1.png" style="width: 300px; height: 300px;" />
         </div>`,
-      choices: ['Blue Deck', 'Red Deck'],
-      data: { phase: 'deck_choice' },
+      choices: ['deck 1', 'deck 2'],
       on_finish: function(data) {
         data.choice = data.response;
       }
     };
 
-    // ====================================================
-    // TRIAL LOGIC (Blue = Q&A / Red = Fact)
-    // ====================================================
-    // ====================================================
-// TRIAL LOGIC (Red = Causal / Blue = Semantic)
+    var clean_deck = [ createImageTrial('images/other/blank.png', 0, 0, 'blank') ];
+
+   // ====================================================
+// BLOCK CREATION (A–B–C → CHOICE → D)
 // ====================================================
-function createDeckTrial(seriesIndex) {
-  return {
-    timeline: [
-      choose_deck,
-      {
-        timeline: [
-          {
-            conditional_function: function() {
-              return jsPsych.data.getLastTrialData().values()[0].response == 0; // red deck (causal)
-            },
-            timeline: [
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a', 4000),
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b', 4000)
-            ]
+function createCausalBlock(seriesIndex, semanticIndex, repetition) {
+  return [
+    // --- Stage 1: A, B, C (לפני הבחירה) ---
+    createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, seriesIndex, repetition, 'A'),
+    createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, seriesIndex, repetition, 'B'),
+    createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, seriesIndex, repetition, 'C'),
+
+    // --- Choice (לאחר שלוש התמונות) ---
+    Object.assign({}, choose_next_image, { data: { series: seriesIndex, repetition: repetition, phase: 'choice' } }),
+
+    // --- Stage 2: Conditional D ---
+    {
+      timeline: [
+        {
+          conditional_function: function() {
+            return jsPsych.data.getLastTrialData().values()[0].response == 0;
           },
-          {
-            conditional_function: function() {
-              return jsPsych.data.getLastTrialData().values()[0].response == 1; // blue deck (semantic)
-            },
-            timeline: [
-              createImageTrial(`images/semantic/semantic_series_${seriesIndex}/semantic_series_${seriesIndex}_a.png`, 'semantic_a', 8000)
-            ]
-          }
-        ]
-      },
-      {
-        type: jsPsychSurveyLikert,
-        questions: [
-          {
-            prompt: "How surprising did you find this information?",
-            labels: [
-              "1 - Not at all surprising",
-              "2",
-              "3",
-              "4",
-              "5 - Extremely surprising"
-            ],
-            required: true
-          }
-        ],
-        data: { phase: 'surprise_rating' }
-      },
-      {
-        type: jsPsychSurveyLikert,
-        questions: [
-          {
-            prompt: "How much did you enjoy this information?",
-            labels: [
-              "1 - Not at all",
-              "2",
-              "3",
-              "4",
-              "5 - Very much"
-            ],
-            required: true
-          }
-        ],
-        data: { phase: 'enjoyment_rating' }
-      }
-    ]
-  };
+          timeline: [
+            createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_d.png`, seriesIndex, repetition, 'D')
+          ]
+        },
+        {
+          conditional_function: function() {
+            return jsPsych.data.getLastTrialData().values()[0].response == 1;
+          },
+          timeline: [
+            createImageTrial(`images/semantic/semantic_series_${semanticIndex}/semantic_series_${semanticIndex}_d.png`, seriesIndex, repetition, 'D')
+          ]
+        }
+      ]
+    },
+
+    // --- Question 1: Surprise ---
+    {
+      type: jsPsychSurveyLikert,
+      questions: [
+        {
+          prompt: "How surprising did you find the last set of sentences?",
+          labels: [
+            "1 - Not at all surprising",
+            "2",
+            "3",
+            "4",
+            "5 - Extremely surprising"
+          ],
+          required: true
+        }
+      ],
+      data: { series: seriesIndex, repetition: repetition, phase: 'surprise_rating' }
+    },
+
+    // --- Question 2: Enjoyment ---
+    {
+      type: jsPsychSurveyLikert,
+      questions: [
+        {
+          prompt: "How much did you enjoy this sequence?",
+          labels: [
+            "1 - Not at all",
+            "2",
+            "3",
+            "4",
+            "5 - Very much"
+          ],
+          required: true
+        }
+      ],
+      data: { series: seriesIndex, repetition: repetition, phase: 'enjoyment_rating' }
+    },
+
+    ...clean_deck
+  ];
 }
 
+
     // ====================================================
-    // RANDOMIZED BLOCKS
+    // BLOCK RANDOMIZATION AND DUPLICATION
     // ====================================================
-    var blocks = [];
+    var causal_blocks = [];
     for (let i = 1; i <= 10; i++) {
-      blocks.push(createDeckTrial(i));
+      causal_blocks.push(createCausalBlock(i, i, 1));
     }
+
+
 
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -236,8 +248,10 @@ function createDeckTrial(seriesIndex) {
       return array;
     }
 
-    shuffleArray(blocks).forEach(block => {
-      timeline.push(block);
+var randomized_causal_blocks = shuffleArray(causal_blocks);
+
+    randomized_causal_blocks.forEach(block => {
+      timeline.push(...block);
     });
 
     // ====================================================
@@ -245,29 +259,30 @@ function createDeckTrial(seriesIndex) {
     // ====================================================
     var trial_difference_between_decks = {
       type: jsPsychSurveyText,
-      questions: [{ prompt: 'Can you describe the difference between the two decks of cards?' }]
+      questions: [{prompt: 'Can you describe the difference between the two decks of cards?'}]
     };
 
     var trial_deck_color = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck showed a question and an answer?',
+      stimulus: 'Which color deck do the following sentences continue the story from?',
       choices: ['Blue', 'Red']
     };
 
     var trial_deck_color_not_following = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck showed an interesting fact?',
+      stimulus: 'Which color deck do the following sentences NOT follow the story from?',
       choices: ['Blue', 'Red']
     };
 
-    var trial_deck_preference = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which type of deck did you prefer overall?',
-      choices: [
-        'The red deck, which showed interesting facts',
-        'The blue deck, which showed questions and answers'
-      ]
-    };
+var trial_deck_preference = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Which type of deck did you prefer overall?',
+  choices: [
+    'The red deck, which showed new information',
+    'The blue deck, which showed a connected and coherent story'
+  ]
+};
+
 
     timeline.push(
       trial_difference_between_decks,
@@ -282,8 +297,8 @@ function createDeckTrial(seriesIndex) {
     var trial_101 = {
       type: jsPsychSurveyText,
       questions: [
-        { prompt: 'Please insert your gender (MALE / FEMALE / OTHER)' },
-        { prompt: 'Please insert your age' }
+        {prompt: 'Please insert your gender (MALE / FEMALE / OTHER)'},
+        {prompt: 'Please insert your age'}
       ]
     };
     timeline.push(trial_101);
@@ -294,7 +309,7 @@ function createDeckTrial(seriesIndex) {
     var trial_102 = {
       type: jsPsychInstructions,
       pages: [
-        '<span style="color: black; font-size: 24px">You have completed the experiment.' +
+        '<span style="color: black; font-size: 24px">You have completed the experiment.' + 
         '<br/>The completion code is : 85B28EDEFF <br/>Thank you for your participation!</span>'
       ],
       show_clickable_nav: true
