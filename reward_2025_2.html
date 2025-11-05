@@ -16,26 +16,63 @@
 
   <script>
     // ====================================================
-    // BASIC SETUP
+    // SAVE FUNCTION
+    // ====================================================
+    var data_folder = 'data/';
+
+    function saveData(name, data) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'write_data.php');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({ filedata: data }));
+    }
+
+    // ====================================================
+    // INIT JPSYCH
     // ====================================================
     var jsPsych = initJsPsych({
       on_finish: function() {
-        jsPsych.data.displayData();
+        saveData(
+          data_folder + 'All_data/all_data_sub_' + subject_id + ".csv",
+          jsPsych.data.get().csv()
+        );
       }
     });
 
+    // ====================================================
+    // SUBJECT PROPERTIES (must come *after* initJsPsych)
+    // ====================================================
+    var subject_id = jsPsych.data.getURLVariable('participantId') || "anon_" + Math.floor(Math.random()*100000);
+    var study_id   = jsPsych.data.getURLVariable('assignmentId') || "none";
+    var session_id = jsPsych.data.getURLVariable('projectId') || "session_" + Date.now();
+
+    jsPsych.data.addProperties({
+      subject_id: subject_id,
+      study_id: study_id,
+      session_id: session_id,
+    });
+
+    // ====================================================
+    // TIMELINE START
+    // ====================================================
     var timeline = [];
+
+    // ====================================================
+    // PRELOAD
+    // ====================================================
+    var preload = {
+      type: jsPsychPreload,
+      images: [
+        'consent_form_2022.png',
+        'images/blue_deck_1.png',
+        'images/red_deck_2.png'
+      ]
+    };
+    timeline.push(preload);
 
     // ====================================================
     // CONSENT & INSTRUCTIONS
     // ====================================================
-
-    var preload = {
-      type: jsPsychPreload,
-      images: ['consent_form_2022.png']
-    };
-    timeline.push(preload);
-
     var trial_intro = {
       type: jsPsychInstructions,
       pages: [
@@ -69,16 +106,15 @@
         '<div style="font-family:Arial; text-align:left; padding:100px;">' +
         '<h2>Instructions</h2>' +
         '<p>In each round, you will first see an initial card showing an interesting fact.</p>' +
-        '<p>Then, one of two decks will be <b>randomly offered</b> (50/50 chance):</p>' +
+        '<p>Then, one of two decks will be randomly offered:</p>' +
         '<ul>' +
-        '<li><span style="color:blue;">Blue deck</span>: shows <b>two related facts</b> (<b>b</b> and then <b>c</b>) that are connected to the first card you saw.</li>' +
-        '<li><span style="color:red;">Red deck</span>: shows <b>two unrelated facts</b> - interesting but taken from different, unconnected topics.</li>' +
+        '<li><span style="color:blue;">Blue deck</span>: shows two related facts connected to the first card.</li>' +
+        '<li><span style="color:red;">Red deck</span>: shows two unrelated facts from different topics.</li>' +
         '</ul>' +
-        '<p>If you choose to <b>view</b> the cards, you will <b>lose a small random amount of money</b>: either 1, 3, or 5 cents.</p>' +
-        '<p>If you choose to <b>wait</b>, you will see a waiting screen for the same duration, but you will <b>not lose money</b>.</p>' +
-        '<p>The total duration of each round is identical, whether you choose to view or wait.</p>' +
-        '<p>You will receive a <b>$1 bonus</b> for completing the experiment. Any amount you decide to spend to view information will be <b>subtracted from this bonus</b>.</p>' +
-        '<p>Follow your curiosity and decide intuitively whether each piece of information is worth the small cost.</p>' +
+        '<p>If you choose to <b>view</b>, you will lose 1, 3, or 5 cents randomly.</p>' +
+        '<p>If you choose to <b>wait</b>, you will not lose money but will see a waiting screen for the same time.</p>' +
+        '<p>Each round lasts the same time, whether you view or wait.</p>' +
+        '<p>You get a $1 bonus, reduced by the total amount you spent to view information.</p>' +
         '</div>'
       ],
       show_clickable_nav: true
@@ -113,20 +149,18 @@
             type: jsPsychHtmlButtonResponse,
             stimulus: function() {
               const color = jsPsych.randomization.sampleWithoutReplacement(["red", "blue"], 1)[0];
-              jsPsych.data.addProperties({ offered_color: color });
-
               const cost = jsPsych.randomization.sampleWithoutReplacement([1, 3, 5], 1)[0];
-              jsPsych.data.addProperties({ view_cost: cost });
+              jsPsych.data.addProperties({ offered_color: color, view_cost: cost });
 
               const reminder = color === "blue"
-                ? "The blue deck shows two related facts connected to the first card."
-                : "The red deck shows two unrelated facts from different topics.";
+                ? "The blue deck shows two related facts."
+                : "The red deck shows two unrelated facts.";
 
               return `<p style="font-size:22px;">The next deck offered is 
                         <span style="color:${color}; font-weight:bold;">${color.toUpperCase()}</span>.</p>
                       <p>${reminder}</p>
-                      <p>If you choose to <b>view</b>, it will cost <b>${cost}¢</b>.</p>
-                      <p>Would you like to <b>view</b> or <b>wait</b> for the same duration?</p>`;
+                      <p>If you choose to view, it will cost <b>${cost}¢</b>.</p>
+                      <p>Would you like to view or wait?</p>`;
             },
             choices: ["View the cards", "Wait"],
             data: { phase: "offer_choice" },
@@ -140,55 +174,8 @@
               return jsPsych.data.getLastTrialData().values()[0].decision === "view";
             },
             timeline: [
-              {
-                type: jsPsychHtmlKeyboardResponse,
-                stimulus: function() {
-                  const color = jsPsych.data.get().last(2).values()[0].offered_color;
-                  const series = seriesIndex;
-
-                  if (color === "blue") {
-                    return `<div style="display:flex;justify-content:center;">
-                              <img src="images/causal/causal_series_${series}/causal_series_${series}_b.png" style="width:300px;height:300px;">
-                            </div>`;
-                  } else {
-                    const otherSeries = jsPsych.randomization.sampleWithoutReplacement(
-                      Array.from({ length: 10 }, (_, i) => i + 1).filter(n => n !== series),
-                      1
-                    )[0];
-                    const letter = jsPsych.randomization.sampleWithoutReplacement(['b','c'],1)[0];
-                    return `<div style="display:flex;justify-content:center;">
-                              <img src="images/causal/causal_series_${otherSeries}/causal_series_${otherSeries}_${letter}.png" style="width:300px;height:300px;">
-                            </div>`;
-                  }
-                },
-                choices: "NO_KEYS",
-                trial_duration: 6000,
-                data: { phase: "view_card_b" }
-              },
-              {
-                type: jsPsychHtmlKeyboardResponse,
-                stimulus: function() {
-                  const color = jsPsych.data.get().last(3).values()[0].offered_color;
-                  const series = seriesIndex;
-                  if (color === "blue") {
-                    return `<div style="display:flex;justify-content:center;">
-                              <img src="images/causal/causal_series_${series}/causal_series_${series}_c.png" style="width:300px;height:300px;">
-                            </div>`;
-                  } else {
-                    const otherSeries = jsPsych.randomization.sampleWithoutReplacement(
-                      Array.from({ length: 10 }, (_, i) => i + 1).filter(n => n !== series),
-                      1
-                    )[0];
-                    const letter = jsPsych.randomization.sampleWithoutReplacement(['b','c'],1)[0];
-                    return `<div style="display:flex;justify-content:center;">
-                              <img src="images/causal/causal_series_${otherSeries}/causal_series_${otherSeries}_${letter}.png" style="width:300px;height:300px;">
-                            </div>`;
-                  }
-                },
-                choices: "NO_KEYS",
-                trial_duration: 6000,
-                data: { phase: "view_card_c" }
-              }
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, "view_card_b", 6000),
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, "view_card_c", 6000)
             ]
           },
 
@@ -240,80 +227,33 @@
     for (let i = 1; i <= 10; i++) {
       blocks.push(createDeckTrial(i));
     }
-    blocks = jsPsych.randomization.shuffle(blocks);
-    timeline.push(...blocks);
+    timeline.push(...jsPsych.randomization.shuffle(blocks));
 
     // ====================================================
-    // POST QUESTIONS
+    // POST QUESTIONS + DEMOGRAPHICS
     // ====================================================
-    var trial_difference_between_decks = {
-      type: jsPsychSurveyText,
-      questions: [{ prompt: 'Can you describe the difference between the two decks of cards?' }]
-    };
-
-    var trial_deck_color = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck showed facts that built on each other?',
-      choices: ['Blue', 'Red']
-    };
-
-    var trial_deck_color_not_following = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck showed unrelated facts?',
-      choices: ['Blue', 'Red']
-    };
-
-    var trial_deck_preference = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which type of deck did you prefer overall?',
-      choices: [
-        'The red deck, which showed unrelated facts',
-        'The blue deck, which showed facts that built on each other'
-      ]
-    };
-
-    var trial_deck_preference_reason = {
-      type: jsPsychSurveyText,
-      questions: [
-        { prompt: 'Why did you prefer that type of deck?' }
-      ]
-    };
-
     timeline.push(
-      trial_difference_between_decks,
-      trial_deck_color,
-      trial_deck_color_not_following,
-      trial_deck_preference,
-      trial_deck_preference_reason
+      { type: jsPsychSurveyText, questions: [{ prompt: 'Can you describe the difference between the two decks?' }] },
+      { type: jsPsychHtmlButtonResponse, stimulus: 'Which color deck showed facts that built on each other?', choices: ['Blue', 'Red'] },
+      { type: jsPsychHtmlButtonResponse, stimulus: 'Which color deck showed unrelated facts?', choices: ['Blue', 'Red'] },
+      { type: jsPsychHtmlButtonResponse, stimulus: 'Which type of deck did you prefer overall?', choices: ['Red deck', 'Blue deck'] },
+      { type: jsPsychSurveyText, questions: [{ prompt: 'Why did you prefer that type of deck?' }] },
+      { type: jsPsychSurveyText, questions: [{ prompt: 'Gender (MALE / FEMALE / OTHER)' }, { prompt: 'Age' }] }
     );
-
-    // ====================================================
-    // DEMOGRAPHICS
-    // ====================================================
-    var trial_101 = {
-      type: jsPsychSurveyText,
-      questions: [
-        { prompt: 'Please insert your gender (MALE / FEMALE / OTHER)' },
-        { prompt: 'Please insert your age' }
-      ]
-    };
-    timeline.push(trial_101);
 
     // ====================================================
     // END SCREEN
     // ====================================================
-    var trial_102 = {
+    timeline.push({
       type: jsPsychInstructions,
       pages: [
-        '<span style="color: black; font-size: 24px">You have completed the experiment.' +
-        '<br/>The completion code is : 85B28EDEFF <br/>Thank you for your participation!</span>'
+        '<span style="color:black; font-size:24px;">You have completed the experiment.<br/>The completion code is: 85B28EDEFF<br/>Thank you for your participation!</span>'
       ],
       show_clickable_nav: true
-    };
-    timeline.push(trial_102);
+    });
 
     // ====================================================
-    // RUN EXPERIMENT
+    // RUN
     // ====================================================
     jsPsych.run(timeline);
   </script>
