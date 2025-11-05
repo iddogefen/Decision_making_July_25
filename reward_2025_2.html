@@ -40,7 +40,7 @@
     });
 
     // ====================================================
-    // SUBJECT PROPERTIES (must come *after* initJsPsych)
+    // SUBJECT PROPERTIES
     // ====================================================
     var subject_id = jsPsych.data.getURLVariable('participantId') || "anon_" + Math.floor(Math.random()*100000);
     var study_id   = jsPsych.data.getURLVariable('assignmentId') || "none";
@@ -169,9 +169,11 @@
             }
           },
 
+          // ====== כחול (קלפים מאותה סדרה) ======
           {
             conditional_function: function() {
-              return jsPsych.data.getLastTrialData().values()[0].decision === "view";
+              const last = jsPsych.data.getLastTrialData().values()[0];
+              return last.decision === "view" && last.offered_color === "blue";
             },
             timeline: [
               createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, "view_card_b", 6000),
@@ -179,6 +181,31 @@
             ]
           },
 
+          // ====== אדום (שני קלפים רנדומליים מסדרות אחרות) ======
+          {
+            conditional_function: function() {
+              const last = jsPsych.data.getLastTrialData().values()[0];
+              return last.decision === "view" && last.offered_color === "red";
+            },
+            timeline: (function() {
+              // כל הסדרות חוץ מהנוכחית
+              const otherSeries = Array.from({ length: 10 }, (_, i) => i + 1).filter(i => i !== seriesIndex);
+
+              // בחר שתי סדרות שונות
+              const randomSeries = jsPsych.randomization.sampleWithoutReplacement(otherSeries, 2);
+
+              // בחר b או c באופן רנדומלי לכל אחת
+              const firstCard = jsPsych.randomization.sampleWithoutReplacement(["b", "c"], 1)[0];
+              const secondCard = jsPsych.randomization.sampleWithoutReplacement(["b", "c"], 1)[0];
+
+              return [
+                createImageTrial(`images/causal/causal_series_${randomSeries[0]}/causal_series_${randomSeries[0]}_${firstCard}.png`, "random_card_1", 6000),
+                createImageTrial(`images/causal/causal_series_${randomSeries[1]}/causal_series_${randomSeries[1]}_${secondCard}.png`, "random_card_2", 6000)
+              ];
+            })()
+          },
+
+          // ====== WAIT CONDITION ======
           {
             conditional_function: function() {
               return jsPsych.data.getLastTrialData().values()[0].decision === "wait";
