@@ -101,22 +101,23 @@
     // ====================================================
     var instructions_deck_choice = {
       type: jsPsychInstructions,
-      pages: [
-        '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
-        '<h2>Instructions</h2>' +
-        '<p>In this experiment, you will choose between two decks of cards: one <span style="color: blue;">blue</span> and one <span style="color: red;">red</span>.</p>' +
-        '<p><b>After each choice, you will see a short piece of information.</b></p>' +
-        '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
-        '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
-        'The <span style="color: blue;">blue deck</span> presents a <b>question and an answer</b> about something new or surprising.<br><br>' +
-        'The <span style="color: red;">red deck</span> presents an <b>interesting fact</b> on something new or surprising.' +
-        '</p>' +
-        '</div>' +
-        '<p><b>The total time for each choice is the same for both decks.</b> Choosing one color will not make the experiment faster or slower.</p>' +
-        '<p>As you go along, try to notice the differences between the two decks and choose the one that feels more engaging or meaningful to you.</p>' +
-        '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
-        '</div>'
-      ],
+pages: [
+  '<div style="font-family: Arial; text-align: left; padding: 100px; padding-top: 5%;">' +
+  '<h2>Instructions</h2>' +
+  '<p>In this experiment, you will choose between two decks of cards: one <span style="color: blue;">blue</span> and one <span style="color: red;">red</span>.</p>' +
+  '<p><b>After each choice, you will see a short piece of information.</b></p>' +
+  '<div style="border: 2px solid #333; border-radius: 12px; padding: 25px; margin: 35px 0; background-color: #f5f5f5;">' +
+  '<p style="font-size: 22px; font-weight: bold; text-align: center; line-height: 1.6;">' +
+  'The <span style="color: blue;">blue deck</span> shows a sequence of <b>facts that build on one another</b>—each card continues the idea from the previous one.<br><br>' +
+  'The <span style="color: red;">red deck</span> shows <b>unrelated facts</b>—each card presents a new and independent piece of information.' +
+  '</p>' +
+  '</div>' +
+  '<p><b>The total time for each choice is the same for both decks.</b> Choosing one color will not make the experiment faster or slower.</p>' +
+  '<p>As you go along, try to notice how the two decks feel different and choose the one that feels more engaging or meaningful to you.</p>' +
+  '<p>There are no right or wrong answers. Simply follow your intuition.</p>' +
+  '</div>'
+],
+
       show_clickable_nav: true
     };
 
@@ -141,10 +142,10 @@
       type: jsPsychHtmlButtonResponse,
       stimulus: `
         <div style="display: flex; justify-content: center; align-items: center;">
-          <img src="images/red_deck_2.png" style="width: 300px; height: 300px; margin-right: 10px;" />
-          <img src="images/blue_deck_1.png" style="width: 300px; height: 300px;" />
+          <img src="images/blue_deck_1.png" style="width: 300px; height: 300px; margin-right: 10px;" />
+          <img src="images/red_deck_2.png" style="width: 300px; height: 300px;" />
         </div>`,
-      choices: ['Blue Deck', 'Red Deck'],
+      choices: ['Red Deck', 'Blue Deck'],
       data: { phase: 'deck_choice' },
       on_finish: function(data) {
         data.choice = data.response;
@@ -160,28 +161,55 @@
 function createDeckTrial(seriesIndex) {
   return {
     timeline: [
+      // Always start with the causal 'a' image from the current series
+      createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a', 7000),
+
+      // Choice screen: red (causal) vs. blue (semantic)
       choose_deck,
+
       {
         timeline: [
+          // If the participant chose the red deck (causal)
           {
             conditional_function: function() {
-              return jsPsych.data.getLastTrialData().values()[0].response == 0; // red deck (causal)
+              return jsPsych.data.getLastTrialData().values()[0].response == 1; // Red deck = causal
             },
             timeline: [
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'causal_a', 6000),
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b', 6000)
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, 'causal_b', 7000),
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, 'causal_c', 7000)
             ]
           },
+
+          // If the participant chose the blue deck (semantic)
           {
             conditional_function: function() {
-              return jsPsych.data.getLastTrialData().values()[0].response == 1; // blue deck (semantic)
+              return jsPsych.data.getLastTrialData().values()[0].response == 0; // Blue deck = semantic
             },
-            timeline: [
-              createImageTrial(`images/semantic/semantic_series_${seriesIndex}/semantic_series_${seriesIndex}_a.png`, 'semantic_a', 12000)
-            ]
+            timeline: (function() {
+              // List all available series (1–10)
+              const allSeries = Array.from({ length: 10 }, (_, i) => i + 1);
+              // Exclude the current series
+              const availableSeries = allSeries.filter(n => n !== seriesIndex);
+              // Randomly select two different series (never the same)
+              const chosenSeries = jsPsych.randomization.sampleWithoutReplacement(availableSeries, 2);
+
+              // For each selected series, randomly choose 'b' or 'c'
+              const randomTrials = chosenSeries.map(num => {
+                const letter = jsPsych.randomization.sampleWithoutReplacement(['b', 'c'], 1)[0];
+                return createImageTrial(
+                  `images/causal/causal_series_${num}/causal_series_${num}_${letter}.png`,
+                  `causal_${num}_${letter}`,
+                  6000
+                );
+              });
+
+              return randomTrials;
+            })()
           }
         ]
       },
+
+      // Surprise rating question
       {
         type: jsPsychSurveyLikert,
         questions: [
@@ -199,6 +227,8 @@ function createDeckTrial(seriesIndex) {
         ],
         data: { phase: 'surprise_rating' }
       },
+
+      // Enjoyment rating question
       {
         type: jsPsychSurveyLikert,
         questions: [
@@ -219,6 +249,8 @@ function createDeckTrial(seriesIndex) {
     ]
   };
 }
+
+
 
     // ====================================================
     // RANDOMIZED BLOCKS
@@ -249,25 +281,25 @@ function createDeckTrial(seriesIndex) {
     };
 
     var trial_deck_color = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck showed a question and an answer?',
-      choices: ['Blue', 'Red']
-    };
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Which color deck showed facts that built on each other?',
+  choices: ['Blue', 'Red']
+};
 
-    var trial_deck_color_not_following = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which color deck showed an interesting fact?',
-      choices: ['Blue', 'Red']
-    };
+var trial_deck_color_not_following = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Which color deck showed unrelated facts?',
+  choices: ['Blue', 'Red']
+};
 
-    var trial_deck_preference = {
-      type: jsPsychHtmlButtonResponse,
-      stimulus: 'Which type of deck did you prefer overall?',
-      choices: [
-        'The red deck, which showed interesting facts',
-        'The blue deck, which showed questions and answers'
-      ]
-    };
+var trial_deck_preference = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: 'Which type of deck did you prefer overall?',
+  choices: [
+    'The red deck, which showed unrelated facts',
+    'The blue deck, which showed facts that built on each other'
+  ]
+};
 
     timeline.push(
       trial_difference_between_decks,
