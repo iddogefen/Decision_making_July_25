@@ -1,0 +1,143 @@
+"success","timeout","failed_images","failed_audio","failed_video","trial_type","trial_index","time_elapsed","internal_node_id","subject_id","study_id","session_id","offered_color","view_cost","view_history","rt","stimulus","response","phase","decision","question_order"
+"true","false","[]","[]","[]","preload","0","573","0.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","","","","","",""
+"","","","","","instructions","1","75630","0.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","[{""page_index"":0,""viewing_time"":75054}]","75055","","","","",""
+"","","","","","instructions","2","78507","0.0-2.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","[{""page_index"":0,""viewing_time"":2874}]","2875","","","","",""
+"true","","","","","fullscreen","3","80856","0.0-3.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1325","","","","",""
+"","","","","","instructions","4","100865","0.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","[{""page_index"":0,""viewing_time"":20002}]","20007","","","","",""
+"","","","","","html-keyboard-response","5","106882","0.0-5.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","6","111431","0.0-5.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","4538","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red deck shows two unrelated facts.</p>
+                      <p>If you choose to view, it will cost <b>5Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","1","offer_choice","wait",""
+"","","","","","html-keyboard-response","7","117442","0.0-5.0-3.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<p style=""font-size:22px;"">Waiting...</p>","null","wait_screen","",""
+"","","","","","survey-likert","8","123753","0.0-5.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","6304","","{""Q0"":1}","surprise_rating","","[0]"
+"","","","","","survey-likert","9","126305","0.0-5.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2548","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","10","132323","0.0-6.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","11","136111","0.0-6.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","3784","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red deck shows two unrelated facts.</p>
+                      <p>If you choose to view, it will cost <b>5Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","1","offer_choice","wait",""
+"","","","","","html-keyboard-response","12","142116","0.0-6.0-3.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<p style=""font-size:22px;"">Waiting...</p>","null","wait_screen","",""
+"","","","","","survey-likert","13","146287","0.0-6.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","4167","","{""Q0"":0}","surprise_rating","","[0]"
+"","","","","","survey-likert","14","148239","0.0-6.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1948","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","15","154250","0.0-7.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","16","156006","0.0-7.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1753","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue deck shows two related facts.</p>
+                      <p>If you choose to view, it will cost <b>3Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","0","offer_choice","view",""
+"","","","","","html-keyboard-response","17","162012","0.0-7.0-2.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_b.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_b","",""
+"","","","","","html-keyboard-response","18","168025","0.0-7.0-2.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_c.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_c","",""
+"","","","","","survey-likert","19","170871","0.0-7.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2843","","{""Q0"":3}","surprise_rating","","[0]"
+"","","","","","survey-likert","20","172352","0.0-7.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1477","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","21","178371","0.0-8.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","22","179758","0.0-8.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1384","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue deck shows two related facts.</p>
+                      <p>If you choose to view, it will cost <b>3Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","0","offer_choice","view",""
+"","","","","","html-keyboard-response","23","185761","0.0-8.0-2.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_b.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_b","",""
+"","","","","","html-keyboard-response","24","191775","0.0-8.0-2.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_c.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_c","",""
+"","","","","","survey-likert","25","194359","0.0-8.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2581","","{""Q0"":1}","surprise_rating","","[0]"
+"","","","","","survey-likert","26","196317","0.0-8.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1954","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","27","202328","0.0-9.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","28","203790","0.0-9.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1459","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red deck shows two unrelated facts.</p>
+                      <p>If you choose to view, it will cost <b>1Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","1","offer_choice","wait",""
+"","","","","","html-keyboard-response","29","209796","0.0-9.0-3.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<p style=""font-size:22px;"">Waiting...</p>","null","wait_screen","",""
+"","","","","","survey-likert","30","212140","0.0-9.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2341","","{""Q0"":0}","surprise_rating","","[0]"
+"","","","","","survey-likert","31","214064","0.0-9.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1921","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","32","220077","0.0-10.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","33","221332","0.0-10.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1253","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue deck shows two related facts.</p>
+                      <p>If you choose to view, it will cost <b>3Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","0","offer_choice","view",""
+"","","","","","html-keyboard-response","34","227336","0.0-10.0-2.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_b.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_b","",""
+"","","","","","html-keyboard-response","35","233340","0.0-10.0-2.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_c.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_c","",""
+"","","","","","survey-likert","36","235855","0.0-10.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2512","","{""Q0"":0}","surprise_rating","","[0]"
+"","","","","","survey-likert","37","237597","0.0-10.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1739","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","38","243605","0.0-11.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","39","244791","0.0-11.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1182","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue deck shows two related facts.</p>
+                      <p>If you choose to view, it will cost <b>5Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","0","offer_choice","view",""
+"","","","","","html-keyboard-response","40","250796","0.0-11.0-2.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_b.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_b","",""
+"","","","","","html-keyboard-response","41","256798","0.0-11.0-2.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_c.png"" style=""width:300px;height:300px;"">
+                   </div>","null","view_card_c","",""
+"","","","","","survey-likert","42","259151","0.0-11.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2351","","{""Q0"":0}","surprise_rating","","[0]"
+"","","","","","survey-likert","43","260674","0.0-11.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1516","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","44","266689","0.0-12.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","45","267806","0.0-12.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1113","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red deck shows two unrelated facts.</p>
+                      <p>If you choose to view, it will cost <b>3Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","1","offer_choice","wait",""
+"","","","","","html-keyboard-response","46","273820","0.0-12.0-3.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<p style=""font-size:22px;"">Waiting...</p>","null","wait_screen","",""
+"","","","","","survey-likert","47","275929","0.0-12.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2106","","{""Q0"":0}","surprise_rating","","[0]"
+"","","","","","survey-likert","48","277646","0.0-12.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1714","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","49","283651","0.0-13.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","50","286160","0.0-13.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2504","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red deck shows two unrelated facts.</p>
+                      <p>If you choose to view, it will cost <b>1Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","1","offer_choice","wait",""
+"","","","","","html-keyboard-response","51","292163","0.0-13.0-3.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<p style=""font-size:22px;"">Waiting...</p>","null","wait_screen","",""
+"","","","","","survey-likert","52","296653","0.0-13.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","4488","","{""Q0"":1}","surprise_rating","","[0]"
+"","","","","","survey-likert","53","298951","0.0-13.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2296","","{""Q0"":4}","enjoyment_rating","","[0]"
+"","","","","","html-keyboard-response","54","304967","0.0-14.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","",""
+"","","","","","html-button-response","55","306535","0.0-14.0-1.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1565","<p style=""font-size:22px;"">The next deck offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red deck shows two unrelated facts.</p>
+                      <p>If you choose to view, it will cost <b>3Â¢</b>.</p>
+                      <p>Would you like to view or wait?</p>","1","offer_choice","wait",""
+"","","","","","html-keyboard-response","56","312553","0.0-14.0-3.0-0.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","null","<p style=""font-size:22px;"">Waiting...</p>","null","wait_screen","",""
+"","","","","","survey-likert","57","314342","0.0-14.0-4.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1787","","{""Q0"":0}","surprise_rating","","[0]"
+"","","","","","survey-likert","58","316560","0.0-14.0-5.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2216","","{""Q0"":2}","enjoyment_rating","","[0]"
+"","","","","","survey-text","59","334567","0.0-15.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","17993","","{""Q0"":""red was two unrelated facts and blue was related facts""}","","",""
+"","","","","","html-button-response","60","339008","0.0-16.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","4438","Which color deck showed facts that built on each other?","0","","",""
+"","","","","","html-button-response","61","340446","0.0-17.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","1434","Which color deck showed unrelated facts?","1","","",""
+"","","","","","html-button-response","62","343407","0.0-18.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","2958","Which type of deck did you prefer overall?","1","","",""
+"","","","","","survey-text","63","357044","0.0-19.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","13629","","{""Q0"":""Because then I learned related facts that were interesting""}","","",""
+"","","","","","survey-text","64","363592","0.0-20.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","","6539","","{""Q0"":""Female"",""Q1"":""35""}","","",""
+"","","","","","instructions","65","369542","0.0-21.0","E8454A56D9AC4EA0ABBBFB0320FBD547","019a563a-7757-7c71-883b-5e1c7b1afb5d","019a5638-fce4-7175-8d5f-4bb0e2ed3fec","red","3","[{""page_index"":0,""viewing_time"":5947}]","5948","","","","",""
