@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Information Value Task - Time Version (120 Seconds)</title>
+    <title>Information Value Task - Time Version (100 Seconds)</title>
     <script src="jspsych/plugins/jspsych.js"></script>
     <script src="jspsych/plugins/plugin-instructions.js"></script>
     <script src="jspsych/plugins/plugin-html-button-response.js"></script>
@@ -56,7 +56,7 @@
     // TIMELINE START
     // ====================================================
     var timeline = [];
-    var EXPERIMENT_DURATION = 120000; // 120 seconds total
+    var EXPERIMENT_DURATION = 100000; // 100 seconds total
     var start_time;
 
     // ====================================================
@@ -100,7 +100,7 @@
     var trial_fullscreen = { type: jsPsychFullscreen, fullscreen_mode: true };
 
     // ====================================================
-    // INSTRUCTIONS (UPDATED)
+    // INSTRUCTIONS
     // ====================================================
     var instructions_part1 = {
       type: jsPsychInstructions,
@@ -110,10 +110,10 @@
         '<p>In this experiment, you will decide how long you are willing to wait to see additional information.</p>' +
         '<p>Each round begins with an initial event, followed by an offer from one of two series:</p>' +
         '<ul>' +
-        '<li><span style="color:blue;">Blue series</span>: shows events that follow a <b>cause and effect</b> relationship (each action leads to a clear result).</li>' +
-        '<li><span style="color:red;">Red series</span>: shows events that have a <b>cause without an effect</b>, situations that do not lead to an outcome.</li>' +
+        '<li><span style="color:blue;">Blue series</span>: shows events that have a <b>cause and effect</b> relationship (each action leads to a result).</li>' +
+        '<li><span style="color:red;">Red series</span>: shows events that have a <b>cause without an effect</b> (situations that do not lead anywhere).</li>' +
         '</ul>' +
-        '<p>If you choose to <b>view</b>, you will wait for a short period (4, 8, or 12 seconds) before seeing the next parts of the sequence.</p>' +
+        '<p>If you choose to <b>view</b>, you will wait for a short period (4, 8, or 12 seconds) before seeing the next images.</p>' +
         '<p>If you choose to <b>skip</b>, you will move immediately to the next round.</p>' +
         '</div>'
       ],
@@ -125,7 +125,7 @@
       pages: [
         '<div style="font-family:Arial; text-align:left; padding:100px;">' +
         '<h2>Instructions (2/2)</h2>' +
-        '<p style="font-size:20px;"><b>The total duration of this experiment will always be 120 seconds (2 minutes).</b></p>' +
+        '<p style="font-size:20px;"><b>The total duration of this experiment will always be 100 seconds (1 minute and 40 seconds).</b></p>' +
         '<p style="font-size:20px;"><b>No matter what you choose, to wait or to skip, the total time will remain the same.</b></p>' +
         '<p style="font-size:20px;"><b>Please follow your curiosity and choose what genuinely interests you.</b></p>' +
         '<p>Click “Next” to begin.</p>' +
@@ -136,6 +136,24 @@
     };
 
     timeline.push(trial_intro, trial_consent, trial_fullscreen, instructions_part1, instructions_part2);
+
+    // ====================================================
+    // DEFINE ALL COMBINATIONS (BALANCED)
+    // ====================================================
+    const all_combinations = jsPsych.randomization.repeat(
+      [
+        {color: "blue", wait: 4000},
+        {color: "blue", wait: 8000},
+        {color: "blue", wait: 12000},
+        {color: "red", wait: 4000},
+        {color: "red", wait: 8000},
+        {color: "red", wait: 12000}
+      ],
+      10 // repeat each combination equally
+    );
+
+    const randomized_combinations = jsPsych.randomization.shuffle(all_combinations);
+    let combo_index = 0;
 
     // ====================================================
     // HELPER FUNCTION
@@ -163,12 +181,14 @@
           {
             type: jsPsychHtmlButtonResponse,
             stimulus: function() {
-              const color = jsPsych.randomization.sampleWithoutReplacement(["red", "blue"], 1)[0];
-              const waitTime = jsPsych.randomization.sampleWithoutReplacement([4000, 8000, 12000], 1)[0];
+              const thisTrial = randomized_combinations[combo_index];
+              combo_index++;
+              const color = thisTrial.color;
+              const waitTime = thisTrial.wait;
               jsPsych.data.addProperties({ offered_color: color, wait_time: waitTime });
 
               const reminder = color === "blue"
-                ? "The blue series shows an event that has a cause and effect relationship."
+                ? "The blue series shows an event that has a cause and an effect."
                 : "The red series shows an event that has a cause but no clear effect.";
 
               return `<p style="font-size:22px;">The next series offered is 
@@ -274,6 +294,23 @@
     timeline.push(main_loop);
 
     // ====================================================
+    // END-OF-TIME SCREEN (NEW)
+    // ====================================================
+    var end_of_time_screen = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus:
+        `<div style="text-align:center; font-size:28px; font-family:Arial; padding:60px;">
+          <p>The 100 seconds are now over.</p>
+          <p>Please take a moment before continuing to the final questions.</p>
+        </div>`,
+      choices: "NO_KEYS",
+      trial_duration: 4000,
+      data: { phase: "end_of_time" }
+    };
+
+    timeline.push(end_of_time_screen);
+
+    // ====================================================
     // POST QUESTIONS + DEMOGRAPHICS
     // ====================================================
     timeline.push(
@@ -315,7 +352,7 @@
     timeline.push({
       type: jsPsychInstructions,
       pages: [
-        '<span style="color:black; font-size:24px;">The 120 seconds are now over.<br/>You have completed the experiment.<br/>Completion code: <b>85B28EDEFF</b><br/>Thank you for your participation!</span>'
+        '<span style="color:black; font-size:24px;">You have completed the experiment.<br/>Completion code: <b>85B28EDEFF</b><br/>Thank you for your participation!</span>'
       ],
       show_clickable_nav: true
     });
