@@ -99,9 +99,6 @@
 
     var trial_fullscreen = { type: jsPsychFullscreen, fullscreen_mode: true };
 
-    // ====================================================
-    // INSTRUCTIONS
-    // ====================================================
     var instructions_part1 = {
       type: jsPsychInstructions,
       pages: [
@@ -149,14 +146,14 @@
         {color: "red", wait: 8000},
         {color: "red", wait: 12000}
       ],
-      10 // repeat each combination equally
+      10
     );
 
     const randomized_combinations = jsPsych.randomization.shuffle(all_combinations);
     let combo_index = 0;
 
     // ====================================================
-    // HELPER FUNCTION
+    // IMAGE TRIAL WITH CARRYOVER DATA
     // ====================================================
     function createImageTrial(imagePath, label, duration = 4000) {
       return {
@@ -166,7 +163,14 @@
                    </div>`,
         choices: "NO_KEYS",
         trial_duration: duration,
-        data: { phase: label }
+        data: function() {
+          const last = jsPsych.data.getLastTrialData().values()[0] || {};
+          return {
+            phase: label,
+            offered_color: last.offered_color || "none",
+            wait_time: last.wait_time || duration
+          };
+        }
       };
     }
 
@@ -185,12 +189,9 @@
               combo_index++;
               const color = thisTrial.color;
               const waitTime = thisTrial.wait;
-              jsPsych.data.addProperties({ offered_color: color, wait_time: waitTime });
-
               const reminder = color === "blue"
                 ? "The blue series shows an event that has a cause and an effect."
                 : "The red series shows an event that has a cause but no clear effect.";
-
               return `<p style="font-size:22px;">The next series offered is 
                         <span style="color:${color}; font-weight:bold;">${color.toUpperCase()}</span>.</p>
                       <p>${reminder}</p>
@@ -198,7 +199,14 @@
                       <p>Would you like to view or skip?</p>`;
             },
             choices: ["View (wait)", "Skip"],
-            data: { phase: "offer_choice" },
+            data: function() {
+              const thisTrial = randomized_combinations[combo_index - 1];
+              return {
+                phase: "offer_choice",
+                offered_color: thisTrial.color,
+                wait_time: thisTrial.wait
+              };
+            },
             on_finish: function(data) {
               data.decision = data.response === 0 ? "view" : "skip";
             }
@@ -207,21 +215,28 @@
           // ====== WAIT SCREEN ======
           {
             conditional_function: function() {
-              const last = jsPsych.data.getLastTrialData().values()[0];
-              return last.decision === "view";
+              return jsPsych.data.getLastTrialData().values()[0].decision === "view";
             },
             timeline: [
               {
                 type: jsPsychHtmlKeyboardResponse,
                 stimulus: function() {
-                  const waitSecs = jsPsych.data.getLastTrialData().values()[0].wait_time / 1000;
+                  const last = jsPsych.data.getLastTrialData().values()[0];
+                  const waitSecs = last.wait_time / 1000;
                   return `<p style="font-size:22px;">Please wait <b>${waitSecs}</b> seconds...</p>`;
                 },
                 choices: "NO_KEYS",
                 trial_duration: function() {
                   return jsPsych.data.getLastTrialData().values()[0].wait_time;
                 },
-                data: { phase: "waiting_screen" }
+                data: function() {
+                  const last = jsPsych.data.getLastTrialData().values()[0];
+                  return {
+                    phase: "waiting_screen",
+                    offered_color: last.offered_color,
+                    wait_time: last.wait_time
+                  };
+                }
               }
             ]
           },
@@ -233,8 +248,8 @@
               return last.decision === "view" && last.offered_color === "blue";
             },
             timeline: [
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, "view_card_b", 4000),
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, "view_card_c", 4000)
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, "view_card_b"),
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, "view_card_c")
             ]
           },
 
@@ -250,8 +265,8 @@
               const firstCard = jsPsych.randomization.sampleWithoutReplacement(["b", "c"], 1)[0];
               const secondCard = jsPsych.randomization.sampleWithoutReplacement(["b", "c"], 1)[0];
               return [
-                createImageTrial(`images/causal/causal_series_${randomSeries[0]}/causal_series_${randomSeries[0]}_${firstCard}.png`, "random_card_1", 4000),
-                createImageTrial(`images/causal/causal_series_${randomSeries[1]}/causal_series_${randomSeries[1]}_${secondCard}.png`, "random_card_2", 4000)
+                createImageTrial(`images/causal/causal_series_${randomSeries[0]}/causal_series_${randomSeries[0]}_${firstCard}.png`, "random_card_1"),
+                createImageTrial(`images/causal/causal_series_${randomSeries[1]}/causal_series_${randomSeries[1]}_${secondCard}.png`, "random_card_2")
               ];
             })()
           },
@@ -267,7 +282,14 @@
                 stimulus: `<p style="font-size:22px;">Skipping to the next round...</p>`,
                 choices: "NO_KEYS",
                 trial_duration: 2000,
-                data: { phase: "skip_screen" }
+                data: function() {
+                  const last = jsPsych.data.getLastTrialData().values()[0];
+                  return {
+                    phase: "skip_screen",
+                    offered_color: last.offered_color,
+                    wait_time: last.wait_time
+                  };
+                }
               }
             ]
           }
@@ -294,7 +316,7 @@
     timeline.push(main_loop);
 
     // ====================================================
-    // END-OF-TIME SCREEN (NEW)
+    // END-OF-TIME SCREEN
     // ====================================================
     var end_of_time_screen = {
       type: jsPsychHtmlKeyboardResponse,
@@ -311,7 +333,7 @@
     timeline.push(end_of_time_screen);
 
     // ====================================================
-    // POST QUESTIONS + DEMOGRAPHICS
+    // POST QUESTIONS
     // ====================================================
     timeline.push(
       {
