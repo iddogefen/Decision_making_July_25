@@ -1,0 +1,108 @@
+"success","timeout","failed_images","failed_audio","failed_video","trial_type","trial_index","time_elapsed","internal_node_id","subject_id","study_id","session_id","view_history","rt","stimulus","response","phase","offered_color","wait_time","decision"
+"true","false","[]","[]","[]","preload","0","434","0.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","","","","","","",""
+"","","","","","instructions","1","4839","0.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","[{""page_index"":0,""viewing_time"":4405}]","4405","","","","","",""
+"","","","","","instructions","2","7954","0.0-2.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","[{""page_index"":0,""viewing_time"":3115}]","3115","","","","","",""
+"true","","","","","fullscreen","3","14927","0.0-3.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","5969","","","","","",""
+"","","","","","instructions","4","28293","0.0-4.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","[{""page_index"":0,""viewing_time"":13363}]","13363","","","","","",""
+"","","","","","instructions","5","38353","0.0-5.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","[{""page_index"":0,""viewing_time"":10058}]","10058","","","","","",""
+"","","","","","html-keyboard-response","6","42358","0.0-6.0-0.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","none","4000",""
+"","","","","","html-button-response","7","53926","0.0-6.0-0.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","11566","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>4 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","4000","skip"
+"","","","","","html-keyboard-response","8","55939","0.0-6.0-0.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","4000",""
+"","","","","","html-keyboard-response","9","59949","0.0-6.0-1.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","4000",""
+"","","","","","html-button-response","10","66831","0.0-6.0-1.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","6882","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","0","offer_choice","red","8000","view"
+"","","","","","html-keyboard-response","11","74843","0.0-6.0-1.0-2.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Please wait <b>8</b> seconds...</p>","null","waiting_screen","red","8000",""
+"","","","","","html-keyboard-response","12","78858","0.0-6.0-2.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","8000",""
+"","","","","","html-button-response","13","110434","0.0-6.0-2.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","31574","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","red","8000","skip"
+"","","","","","html-keyboard-response","14","112442","0.0-6.0-2.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","red","8000",""
+"","","","","","html-keyboard-response","15","116453","0.0-6.0-3.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","8000",""
+"","","","","","html-button-response","16","124340","0.0-6.0-3.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","7884","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>12 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","12000","skip"
+"","","","","","html-keyboard-response","17","126348","0.0-6.0-3.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","12000",""
+"","","","","","html-keyboard-response","18","130355","0.0-6.0-4.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","12000",""
+"","","","","","html-button-response","19","154714","0.0-6.0-4.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","24358","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","8000","skip"
+"","","","","","html-keyboard-response","20","156722","0.0-6.0-4.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","8000",""
+"","","","","","html-keyboard-response","21","160727","0.0-6.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","8000",""
+"","","","","","html-button-response","22","164095","0.0-6.0-5.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","3368","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","red","8000","skip"
+"","","","","","html-keyboard-response","23","166106","0.0-6.0-5.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","red","8000",""
+"","","","","","html-keyboard-response","24","170107","0.0-6.0-6.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","8000",""
+"","","","","","html-button-response","25","172643","0.0-6.0-6.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","2537","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","0","offer_choice","blue","8000","view"
+"","","","","","html-keyboard-response","26","180662","0.0-6.0-6.0-2.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Please wait <b>8</b> seconds...</p>","null","waiting_screen","blue","8000",""
+"","","","","","html-keyboard-response","27","184672","0.0-6.0-7.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","8000",""
+"","","","","","html-button-response","28","190958","0.0-6.0-7.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","6284","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>4 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","red","4000","skip"
+"","","","","","html-keyboard-response","29","192961","0.0-6.0-7.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","red","4000",""
+"","","","","","html-keyboard-response","30","196962","0.0-6.0-8.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","4000",""
+"","","","","","html-button-response","31","203788","0.0-6.0-8.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","6825","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","red","8000","skip"
+"","","","","","html-keyboard-response","32","205803","0.0-6.0-8.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","red","8000",""
+"","","","","","html-keyboard-response","33","209805","0.0-6.0-9.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","8000",""
+"","","","","","html-button-response","34","216017","0.0-6.0-9.0-1.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","6209","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>12 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","red","12000","skip"
+"","","","","","html-keyboard-response","35","218026","0.0-6.0-9.0-5.0-0.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","red","12000",""
+"","","","","","html-keyboard-response","36","222032","0.0-7.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","null","<div style=""text-align:center; font-size:28px; font-family:Arial; padding:60px;"">
+          <p>The 100 seconds are now over.</p>
+          <p>Please take a moment before continuing to the final questions.</p>
+        </div>","null","end_of_time","","",""
+"","","","","","survey-text","37","251577","0.0-8.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","29503","","{""Q0"":""Blue had a cause and effect the red one did not.""}","","","",""
+"","","","","","html-button-response","38","261693","0.0-9.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","10114","Which color deck showed facts that built on each other?","0","","","",""
+"","","","","","html-button-response","39","263640","0.0-10.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","1945","Which color deck showed unrelated facts?","1","","","",""
+"","","","","","html-button-response","40","265777","0.0-11.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","2133","Which type of deck did you prefer overall?","1","","","",""
+"","","","","","survey-text","41","289511","0.0-12.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","23727","","{""Q0"":""I liked the building of it all together.""}","","","",""
+"","","","","","survey-text","42","300846","0.0-13.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","","11316","","{""Q0"":""female"",""Q1"":""31""}","","","",""
+"","","","","","instructions","43","314628","0.0-14.0","3429566AED74418EA649E203E64EE6CD","019a73f7-f8b4-76a5-bb0c-4aae98ceea46","019a73f3-2330-77da-838d-1b323d7854ea","[{""page_index"":0,""viewing_time"":13781}]","13781","","","","","",""
