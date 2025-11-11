@@ -1,0 +1,108 @@
+"success","timeout","failed_images","failed_audio","failed_video","trial_type","trial_index","time_elapsed","internal_node_id","subject_id","study_id","session_id","view_history","rt","stimulus","response","phase","offered_color","wait_time","decision"
+"true","false","[]","[]","[]","preload","0","55","0.0-0.0","anon_6274","none","session_1762879892614","","","","","","","",""
+"","","","","","instructions","1","1309","0.0-1.0","anon_6274","none","session_1762879892614","[{""page_index"":0,""viewing_time"":1252}]","1253","","","","","",""
+"","","","","","instructions","2","6246","0.0-2.0","anon_6274","none","session_1762879892614","[{""page_index"":0,""viewing_time"":4934}]","4935","","","","","",""
+"true","","","","","fullscreen","3","8267","0.0-3.0","anon_6274","none","session_1762879892614","","971","","","","","",""
+"","","","","","instructions","4","9285","0.0-4.0","anon_6274","none","session_1762879892614","[{""page_index"":0,""viewing_time"":1016}]","1017","","","","","",""
+"","","","","","instructions","5","13676","0.0-5.0","anon_6274","none","session_1762879892614","[{""page_index"":0,""viewing_time"":4390}]","4391","","","","","",""
+"","","","","","html-keyboard-response","6","17689","0.0-6.0-0.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_10/causal_series_10_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","none","4000",""
+"","","","","","html-button-response","7","21734","0.0-6.0-0.0-1.0","anon_6274","none","session_1762879892614","","4042","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","8000","skip"
+"","","","","","html-keyboard-response","8","23750","0.0-6.0-0.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","8000",""
+"","","","","","html-keyboard-response","9","27760","0.0-6.0-1.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_6/causal_series_6_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","8000",""
+"","","","","","html-button-response","10","29475","0.0-6.0-1.0-1.0","anon_6274","none","session_1762879892614","","1714","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>12 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","12000","skip"
+"","","","","","html-keyboard-response","11","31484","0.0-6.0-1.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","12000",""
+"","","","","","html-keyboard-response","12","35487","0.0-6.0-2.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_4/causal_series_4_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","12000",""
+"","","","","","html-button-response","13","35931","0.0-6.0-2.0-1.0","anon_6274","none","session_1762879892614","","443","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","8000","skip"
+"","","","","","html-keyboard-response","14","37933","0.0-6.0-2.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","8000",""
+"","","","","","html-keyboard-response","15","41943","0.0-6.0-3.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_3/causal_series_3_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","8000",""
+"","","","","","html-button-response","16","42675","0.0-6.0-3.0-1.0","anon_6274","none","session_1762879892614","","732","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>12 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","12000","skip"
+"","","","","","html-keyboard-response","17","44681","0.0-6.0-3.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","12000",""
+"","","","","","html-keyboard-response","18","48689","0.0-6.0-4.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_7/causal_series_7_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","12000",""
+"","","","","","html-button-response","19","50445","0.0-6.0-4.0-1.0","anon_6274","none","session_1762879892614","","1755","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>4 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","4000","skip"
+"","","","","","html-keyboard-response","20","52464","0.0-6.0-4.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","4000",""
+"","","","","","html-keyboard-response","21","56474","0.0-6.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_9/causal_series_9_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","4000",""
+"","","","","","html-button-response","22","58188","0.0-6.0-5.0-1.0","anon_6274","none","session_1762879892614","","1713","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>4 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","red","4000","skip"
+"","","","","","html-keyboard-response","23","60202","0.0-6.0-5.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","red","4000",""
+"","","","","","html-keyboard-response","24","64212","0.0-6.0-6.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_2/causal_series_2_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","4000",""
+"","","","","","html-button-response","25","138427","0.0-6.0-6.0-1.0","anon_6274","none","session_1762879892614","","74215","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","8000","skip"
+"","","","","","html-keyboard-response","26","140443","0.0-6.0-6.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","8000",""
+"","","","","","html-keyboard-response","27","144465","0.0-6.0-7.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_8/causal_series_8_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","8000",""
+"","","","","","html-button-response","28","145976","0.0-6.0-7.0-1.0","anon_6274","none","session_1762879892614","","1509","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","1","offer_choice","blue","8000","skip"
+"","","","","","html-keyboard-response","29","147994","0.0-6.0-7.0-5.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Skipping to the next round...</p>","null","skip_screen","blue","8000",""
+"","","","","","html-keyboard-response","30","152004","0.0-6.0-8.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_5/causal_series_5_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","blue","8000",""
+"","","","","","html-button-response","31","154958","0.0-6.0-8.0-1.0","anon_6274","none","session_1762879892614","","2953","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:red; font-weight:bold;"">RED</span>.</p>
+                      <p>The red series shows an event that has a cause but no clear effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","0","offer_choice","red","8000","view"
+"","","","","","html-keyboard-response","32","162963","0.0-6.0-8.0-2.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Please wait <b>8</b> seconds...</p>","null","waiting_screen","red","8000",""
+"","","","","","html-keyboard-response","33","166975","0.0-6.0-9.0-0.0","anon_6274","none","session_1762879892614","","null","<div style=""display:flex;justify-content:center;align-items:center;"">
+                     <img src=""images/causal/causal_series_1/causal_series_1_a.png"" style=""width:300px;height:300px;"">
+                   </div>","null","start","red","8000",""
+"","","","","","html-button-response","34","170958","0.0-6.0-9.0-1.0","anon_6274","none","session_1762879892614","","3980","<p style=""font-size:22px;"">The next series offered is 
+                        <span style=""color:blue; font-weight:bold;"">BLUE</span>.</p>
+                      <p>The blue series shows an event that has a cause and an effect.</p>
+                      <p>If you choose to view, you will need to wait <b>8 seconds</b> before seeing the next images.</p>
+                      <p>Would you like to view or skip?</p>","0","offer_choice","blue","8000","view"
+"","","","","","html-keyboard-response","35","178969","0.0-6.0-9.0-2.0-0.0","anon_6274","none","session_1762879892614","","null","<p style=""font-size:22px;"">Please wait <b>8</b> seconds...</p>","null","waiting_screen","blue","8000",""
+"","","","","","html-keyboard-response","36","182978","0.0-7.0","anon_6274","none","session_1762879892614","","null","<div style=""text-align:center; font-size:28px; font-family:Arial; padding:60px;"">
+          <p>The 100 seconds are now over.</p>
+          <p>Please take a moment before continuing to the final questions.</p>
+        </div>","null","end_of_time","","",""
+"","","","","","survey-text","37","184321","0.0-8.0","anon_6274","none","session_1762879892614","","1320","","{""Q0"":""""}","","","",""
+"","","","","","html-button-response","38","185413","0.0-9.0","anon_6274","none","session_1762879892614","","1091","Which color deck showed facts that built on each other?","1","","","",""
+"","","","","","html-button-response","39","185988","0.0-10.0","anon_6274","none","session_1762879892614","","574","Which color deck showed unrelated facts?","1","","","",""
+"","","","","","html-button-response","40","186454","0.0-11.0","anon_6274","none","session_1762879892614","","466","Which type of deck did you prefer overall?","1","","","",""
+"","","","","","survey-text","41","188276","0.0-12.0","anon_6274","none","session_1762879892614","","1821","","{""Q0"":""""}","","","",""
+"","","","","","survey-text","42","189701","0.0-13.0","anon_6274","none","session_1762879892614","","1423","","{""Q0"":"""",""Q1"":""""}","","","",""
+"","","","","","instructions","43","190989","0.0-14.0","anon_6274","none","session_1762879892614","[{""page_index"":0,""viewing_time"":1286}]","1288","","","","","",""
