@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Information Value Task - 140 Seconds</title>
+    <title>Information Value Task - Time Version (140 Seconds)</title>
     <script src="jspsych/plugins/jspsych.js"></script>
     <script src="jspsych/plugins/plugin-instructions.js"></script>
     <script src="jspsych/plugins/plugin-html-button-response.js"></script>
@@ -56,7 +56,7 @@
     // TIMELINE START
     // ====================================================
     var timeline = [];
-    var EXPERIMENT_DURATION = 140000; // 140 seconds total
+    var EXPERIMENT_DURATION = 140000; // 140 seconds
     var start_time;
 
     // ====================================================
@@ -80,7 +80,7 @@
       pages: [
         '<div style="font-family:Arial; text-align:left; padding:80px;">' +
         '<h2>Welcome!</h2>' +
-        '<p>Thank you for participating in this study. You will make decisions about whether to wait longer to see pieces of information.</p>' +
+        '<p>Thank you for participating in this study. You will make decisions about how long to wait to view pieces of information.</p>' +
         '<p>Press "Next" to continue.</p></div>'
       ],
       show_clickable_nav: true
@@ -102,33 +102,45 @@
       fullscreen_mode: true
     };
 
-    var instructions_main = {
+    // ====================================================
+    // SPLIT INSTRUCTIONS INTO TWO PAGES
+    // ====================================================
+    var instructions_part1 = {
       type: jsPsychInstructions,
       pages: [
         '<div style="font-family:Arial; text-align:left; padding:100px;">' +
-        '<h2>Instructions</h2>' +
-        '<p>In this experiment, you will see short sequences of images.</p>' +
-        '<p>There are two types of sequences:</p>' +
+        '<h2>Instructions (1/2)</h2>' +
+        '<p>In this experiment, you will decide how long you are willing to wait to see additional information.</p>' +
+        '<p>Each round begins with an initial event, followed by an offer from one of two series:</p>' +
         '<ul>' +
-        '<li><span style="color:blue;">Blue series</span>: a sequence of events that have a <b>cause-and-effect relationship</b> (one event leads to the next).</li>' +
-        '<li><span style="color:red;">Red series</span>: a sequence of events that are <b>unrelated to each other</b> and have no causal link.</li>' +
+        '<li><span style="color:blue;">Blue series</span>: shows events that have a <b>cause-and-effect relationship</b> (each event leads to the next).</li>' +
+        '<li><span style="color:red;">Red series</span>: shows events that are <b>unrelated to each other</b> and have no causal link.</li>' +
         '</ul>' +
-        '<p>In each round, you will first see the beginning of a sequence. Then, one of the two types (blue or red) will be randomly offered.</p>' +
-        '<p>If you choose to <b>view</b>, you will wait <b>6, 8, or 12 seconds</b> before seeing the next parts of the sequence.</p>' +
+        '<p>If you choose to <b>view</b>, you will wait for a short period (6, 8, or 12 seconds) before seeing the next parts of the sequence.</p>' +
         '<p>If you choose to <b>skip</b>, you will move immediately to the next round.</p>' +
+        '</div>'
+      ],
+      show_clickable_nav: true
+    };
+
+    var instructions_part2 = {
+      type: jsPsychInstructions,
+      pages: [
+        '<div style="font-family:Arial; text-align:left; padding:100px;">' +
+        '<h2>Instructions (2/2)</h2>' +
         '<p style="font-size:20px; color:black;"><b>The total duration of this experiment will always be 140 seconds (2 minutes and 20 seconds).</b></p>' +
         '<p style="font-size:20px; color:black;"><b>This means that no matter what you choose — to wait or to skip — the total time of the experiment will remain the same.</b></p>' +
         '<p style="font-size:20px; color:black;"><b>So please follow your curiosity and choose what genuinely interests you.</b></p>' +
-        '<p>When you click “Next,” the 140-second task will begin.</p>' +
+        '<p>When you click “Next,” the task will begin.</p>' +
         '</div>'
       ],
       show_clickable_nav: true,
       on_finish: function() {
-        start_time = performance.now(); // mark experiment start
+        start_time = performance.now(); // start timer
       }
     };
 
-    timeline.push(trial_intro, trial_consent, trial_fullscreen, instructions_main);
+    timeline.push(trial_intro, trial_consent, trial_fullscreen, instructions_part1, instructions_part2);
 
     // ====================================================
     // HELPER FUNCTION
@@ -199,7 +211,7 @@
             ]
           },
 
-          // ====== BLUE (causal sequence) ======
+          // ====== BLUE (causal) ======
           {
             conditional_function: function() {
               const last = jsPsych.data.getLastTrialData().values()[0];
@@ -211,7 +223,7 @@
             ]
           },
 
-          // ====== RED (non-causal sequence) ======
+          // ====== RED (non-causal) ======
           {
             conditional_function: function() {
               const last = jsPsych.data.getLastTrialData().values()[0];
@@ -255,7 +267,7 @@
       timeline: [],
       loop_function: function() {
         var elapsed = performance.now() - start_time;
-        return elapsed < EXPERIMENT_DURATION; // repeat until 140s passed
+        return elapsed < EXPERIMENT_DURATION;
       }
     };
 
@@ -265,6 +277,46 @@
     }
     main_loop.timeline = jsPsych.randomization.shuffle(blocks);
     timeline.push(main_loop);
+
+    // ====================================================
+    // POST QUESTIONS + DEMOGRAPHICS
+    // ====================================================
+    timeline.push(
+      {
+        type: jsPsychSurveyText,
+        questions: [
+          { prompt: 'Can you describe the difference between the two decks?' }
+        ]
+      },
+      {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: 'Which color deck showed facts that built on each other?',
+        choices: ['Blue', 'Red']
+      },
+      {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: 'Which color deck showed unrelated facts?',
+        choices: ['Blue', 'Red']
+      },
+      {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: 'Which type of deck did you prefer overall?',
+        choices: ['Red deck', 'Blue deck']
+      },
+      {
+        type: jsPsychSurveyText,
+        questions: [
+          { prompt: 'Why did you prefer that type of deck?' }
+        ]
+      },
+      {
+        type: jsPsychSurveyText,
+        questions: [
+          { prompt: 'Gender (MALE / FEMALE / OTHER)' },
+          { prompt: 'Age' }
+        ]
+      }
+    );
 
     // ====================================================
     // END SCREEN
