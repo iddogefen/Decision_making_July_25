@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Information Value Task - Time Version (140 Seconds)</title>
+    <title>Information Value Task - Time Version (120 Seconds)</title>
     <script src="jspsych/plugins/jspsych.js"></script>
     <script src="jspsych/plugins/plugin-instructions.js"></script>
     <script src="jspsych/plugins/plugin-html-button-response.js"></script>
@@ -56,7 +56,7 @@
     // TIMELINE START
     // ====================================================
     var timeline = [];
-    var EXPERIMENT_DURATION = 140000; // 140 seconds
+    var EXPERIMENT_DURATION = 120000; // 120 seconds total
     var start_time;
 
     // ====================================================
@@ -100,7 +100,7 @@
     var trial_fullscreen = { type: jsPsychFullscreen, fullscreen_mode: true };
 
     // ====================================================
-    // SPLIT INSTRUCTIONS INTO TWO PAGES
+    // INSTRUCTIONS (UPDATED)
     // ====================================================
     var instructions_part1 = {
       type: jsPsychInstructions,
@@ -110,10 +110,10 @@
         '<p>In this experiment, you will decide how long you are willing to wait to see additional information.</p>' +
         '<p>Each round begins with an initial event, followed by an offer from one of two series:</p>' +
         '<ul>' +
-        '<li><span style="color:blue;">Blue series</span>: shows events that follow a <b>cause → effect</b> relationship (each event leads to a result).</li>' +
-        '<li><span style="color:red;">Red series</span>: shows events that represent a <b>cause without a clear effect</b> — actions or situations that do not lead to a direct outcome.</li>' +
+        '<li><span style="color:blue;">Blue series</span>: shows events that follow a <b>cause and effect</b> relationship (each action leads to a clear result).</li>' +
+        '<li><span style="color:red;">Red series</span>: shows events that have a <b>cause without an effect</b>, situations that do not lead to an outcome.</li>' +
         '</ul>' +
-        '<p>If you choose to <b>view</b>, you will wait for a short period (6, 8, or 12 seconds) before seeing the next parts of the sequence.</p>' +
+        '<p>If you choose to <b>view</b>, you will wait for a short period (4, 8, or 12 seconds) before seeing the next parts of the sequence.</p>' +
         '<p>If you choose to <b>skip</b>, you will move immediately to the next round.</p>' +
         '</div>'
       ],
@@ -125,8 +125,8 @@
       pages: [
         '<div style="font-family:Arial; text-align:left; padding:100px;">' +
         '<h2>Instructions (2/2)</h2>' +
-        '<p style="font-size:20px;"><b>The total duration of this experiment will always be 140 seconds (2 minutes and 20 seconds).</b></p>' +
-        '<p style="font-size:20px;"><b>No matter what you choose — to wait or to skip — the total time will remain the same.</b></p>' +
+        '<p style="font-size:20px;"><b>The total duration of this experiment will always be 120 seconds (2 minutes).</b></p>' +
+        '<p style="font-size:20px;"><b>No matter what you choose, to wait or to skip, the total time will remain the same.</b></p>' +
         '<p style="font-size:20px;"><b>Please follow your curiosity and choose what genuinely interests you.</b></p>' +
         '<p>Click “Next” to begin.</p>' +
         '</div>'
@@ -140,7 +140,7 @@
     // ====================================================
     // HELPER FUNCTION
     // ====================================================
-    function createImageTrial(imagePath, label, duration = 6000) {
+    function createImageTrial(imagePath, label, duration = 4000) {
       return {
         type: jsPsychHtmlKeyboardResponse,
         stimulus: `<div style="display:flex;justify-content:center;align-items:center;">
@@ -153,22 +153,22 @@
     }
 
     // ====================================================
-    // MAIN TRIAL FUNCTION (unchanged structure)
+    // MAIN TRIAL FUNCTION
     // ====================================================
     function createDeckTrial(seriesIndex) {
       return {
         timeline: [
-          createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'start', 6000),
+          createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_a.png`, 'start', 4000),
 
           {
             type: jsPsychHtmlButtonResponse,
             stimulus: function() {
               const color = jsPsych.randomization.sampleWithoutReplacement(["red", "blue"], 1)[0];
-              const waitTime = jsPsych.randomization.sampleWithoutReplacement([6000, 8000, 12000], 1)[0];
+              const waitTime = jsPsych.randomization.sampleWithoutReplacement([4000, 8000, 12000], 1)[0];
               jsPsych.data.addProperties({ offered_color: color, wait_time: waitTime });
 
               const reminder = color === "blue"
-                ? "The blue series shows an event that has an effect — a cause leading to a result."
+                ? "The blue series shows an event that has a cause and effect relationship."
                 : "The red series shows an event that has a cause but no clear effect.";
 
               return `<p style="font-size:22px;">The next series offered is 
@@ -213,8 +213,8 @@
               return last.decision === "view" && last.offered_color === "blue";
             },
             timeline: [
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, "view_card_b", 6000),
-              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, "view_card_c", 6000)
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_b.png`, "view_card_b", 4000),
+              createImageTrial(`images/causal/causal_series_${seriesIndex}/causal_series_${seriesIndex}_c.png`, "view_card_c", 4000)
             ]
           },
 
@@ -230,8 +230,8 @@
               const firstCard = jsPsych.randomization.sampleWithoutReplacement(["b", "c"], 1)[0];
               const secondCard = jsPsych.randomization.sampleWithoutReplacement(["b", "c"], 1)[0];
               return [
-                createImageTrial(`images/causal/causal_series_${randomSeries[0]}/causal_series_${randomSeries[0]}_${firstCard}.png`, "random_card_1", 6000),
-                createImageTrial(`images/causal/causal_series_${randomSeries[1]}/causal_series_${randomSeries[1]}_${secondCard}.png`, "random_card_2", 6000)
+                createImageTrial(`images/causal/causal_series_${randomSeries[0]}/causal_series_${randomSeries[0]}_${firstCard}.png`, "random_card_1", 4000),
+                createImageTrial(`images/causal/causal_series_${randomSeries[1]}/causal_series_${randomSeries[1]}_${secondCard}.png`, "random_card_2", 4000)
               ];
             })()
           },
@@ -315,7 +315,7 @@
     timeline.push({
       type: jsPsychInstructions,
       pages: [
-        '<span style="color:black; font-size:24px;">The 140 seconds are now over.<br/>You have completed the experiment.<br/>Completion code: <b>85B28EDEFF</b><br/>Thank you for your participation!</span>'
+        '<span style="color:black; font-size:24px;">The 120 seconds are now over.<br/>You have completed the experiment.<br/>Completion code: <b>85B28EDEFF</b><br/>Thank you for your participation!</span>'
       ],
       show_clickable_nav: true
     });
