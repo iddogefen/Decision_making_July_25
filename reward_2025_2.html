@@ -97,10 +97,7 @@
       show_clickable_nav: true
     };
 
-    var trial_fullscreen = {
-      type: jsPsychFullscreen,
-      fullscreen_mode: true
-    };
+    var trial_fullscreen = { type: jsPsychFullscreen, fullscreen_mode: true };
 
     // ====================================================
     // SPLIT INSTRUCTIONS INTO TWO PAGES
@@ -113,8 +110,8 @@
         '<p>In this experiment, you will decide how long you are willing to wait to see additional information.</p>' +
         '<p>Each round begins with an initial event, followed by an offer from one of two series:</p>' +
         '<ul>' +
-        '<li><span style="color:blue;">Blue series</span>: shows events that have a <b>cause-and-effect relationship</b> (each event leads to the next).</li>' +
-        '<li><span style="color:red;">Red series</span>: shows events that are <b>unrelated to each other</b> and have no causal link.</li>' +
+        '<li><span style="color:blue;">Blue series</span>: shows events that follow a <b>cause → effect</b> relationship (each event leads to a result).</li>' +
+        '<li><span style="color:red;">Red series</span>: shows events that represent a <b>cause without a clear effect</b> — actions or situations that do not lead to a direct outcome.</li>' +
         '</ul>' +
         '<p>If you choose to <b>view</b>, you will wait for a short period (6, 8, or 12 seconds) before seeing the next parts of the sequence.</p>' +
         '<p>If you choose to <b>skip</b>, you will move immediately to the next round.</p>' +
@@ -128,16 +125,14 @@
       pages: [
         '<div style="font-family:Arial; text-align:left; padding:100px;">' +
         '<h2>Instructions (2/2)</h2>' +
-        '<p style="font-size:20px; color:black;"><b>The total duration of this experiment will always be 140 seconds (2 minutes and 20 seconds).</b></p>' +
-        '<p style="font-size:20px; color:black;"><b>This means that no matter what you choose — to wait or to skip — the total time of the experiment will remain the same.</b></p>' +
-        '<p style="font-size:20px; color:black;"><b>So please follow your curiosity and choose what genuinely interests you.</b></p>' +
-        '<p>When you click “Next,” the task will begin.</p>' +
+        '<p style="font-size:20px;"><b>The total duration of this experiment will always be 140 seconds (2 minutes and 20 seconds).</b></p>' +
+        '<p style="font-size:20px;"><b>No matter what you choose — to wait or to skip — the total time will remain the same.</b></p>' +
+        '<p style="font-size:20px;"><b>Please follow your curiosity and choose what genuinely interests you.</b></p>' +
+        '<p>Click “Next” to begin.</p>' +
         '</div>'
       ],
       show_clickable_nav: true,
-      on_finish: function() {
-        start_time = performance.now(); // start timer
-      }
+      on_finish: function() { start_time = performance.now(); }
     };
 
     timeline.push(trial_intro, trial_consent, trial_fullscreen, instructions_part1, instructions_part2);
@@ -158,7 +153,7 @@
     }
 
     // ====================================================
-    // MAIN TRIAL FUNCTION
+    // MAIN TRIAL FUNCTION (unchanged structure)
     // ====================================================
     function createDeckTrial(seriesIndex) {
       return {
@@ -173,8 +168,8 @@
               jsPsych.data.addProperties({ offered_color: color, wait_time: waitTime });
 
               const reminder = color === "blue"
-                ? "The blue series shows a sequence of events with a cause-and-effect relationship."
-                : "The red series shows a sequence of unrelated events with no causal link.";
+                ? "The blue series shows an event that has an effect — a cause leading to a result."
+                : "The red series shows an event that has a cause but no clear effect.";
 
               return `<p style="font-size:22px;">The next series offered is 
                         <span style="color:${color}; font-weight:bold;">${color.toUpperCase()}</span>.</p>
@@ -284,9 +279,7 @@
     timeline.push(
       {
         type: jsPsychSurveyText,
-        questions: [
-          { prompt: 'Can you describe the difference between the two decks?' }
-        ]
+        questions: [{ prompt: 'Can you describe the difference between the two decks?' }]
       },
       {
         type: jsPsychHtmlButtonResponse,
@@ -305,9 +298,7 @@
       },
       {
         type: jsPsychSurveyText,
-        questions: [
-          { prompt: 'Why did you prefer that type of deck?' }
-        ]
+        questions: [{ prompt: 'Why did you prefer that type of deck?' }]
       },
       {
         type: jsPsychSurveyText,
@@ -329,7 +320,7 @@
       show_clickable_nav: true
     });
 
-    // ================================================
+    // ====================================================
     // RUN
     // ====================================================
     jsPsych.run(timeline);
